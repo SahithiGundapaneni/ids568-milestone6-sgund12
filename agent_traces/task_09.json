@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "Key components of a complete RAG pipeline",
+      "input": "components of a complete RAG pipeline",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "Key components of a complete RAG pipeline",
+        "query": "components of a complete RAG pipeline",
         "results": [
+          {
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.7470398545265198
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.7469979524612427
+          },
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.4832628667354584
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.4760774075984955
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.4760774075984955
+            "score": 0.7466061115264893
           }
         ]
       }
@@ -33,12 +33,12 @@
       "step": 2,
       "action": "summarize",
       "input": {
-        "search": "RAG pipeline components"
+        "search_query": "complete RAG pipeline components"
       },
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " The RAG (Risk Assessment & Governance) pipeline refers to a series of stages in software development that focus on assessing and managing risks. Key components typically include risk identification, assessment, mitigation, and reporting phases, which help ensure the successful delivery of projects while minimizing potential issues."
+        "summary": " The RAG (Risk Assessment and Governance) pipeline is a comprehensive process used for risk management. It includes several key components such as Risk Identification, Analysis, and Governance/Mitigation phases to assess, prioritize, and manage risks effectively within an organization. Completing the entire RAG pipeline involves implementing each of these phases to ensure proper risk assessment and governance."
       }
     },
     {
@@ -53,17 +53,17 @@
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9311082363128662
+            "score": 0.9311083555221558
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9198836088180542
+            "score": 0.919883668422699
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9198836088180542
+            "score": 0.919883668422699
           }
         ]
       }
@@ -73,9 +73,9 @@
       "action": "answer",
       "input": "Summarize the key components of a complete RAG pipeline.",
       "reasoning": "",
-      "result": " The key components of a complete RAG (Risk Assessment & Governance) pipeline are as follows:\n\n1. Risk Identification: This is the initial step where potential risks are identified and documented.\n\n2. Risk Assessment: Each risk is then assessed based on its likelihood and impact to determine its level of severity.\n\n3. Risk Mitigation: Strategies are developed to reduce or eliminate the identified risks, ensuring the successful delivery of projects.\n\n4. Reporting: The progress and outcomes of risk management activities are reported to relevant stakeholders, helping them make informed decisions.\n\nIn addition, for a complete RAG pipeline in production, it is also essential to have mechanisms for monitoring retrieval quality, latency, and logging every step for debugging purposes. These could involve tools like hybrid search (combining dense and BM25 sparse retrieval) and agent controllers, which are mentioned in the provided information."
+      "result": " The RAG pipeline, used for risk management, consists of several key components:\n\n1. **Risk Identification**: This is the initial phase where potential risks are identified within an organization.\n\n2. **Risk Analysis**: In this stage, the identified risks are evaluated based on their impact and likelihood of occurrence.\n\n3. **Governance/Mitigation**: After analyzing the risks, appropriate measures are taken to manage or mitigate them effectively.\n\nMoreover, completing a complete RAG pipeline in production involves:\n\n- Monitoring retrieval quality and latency during the MLOps process.\n- Utilizing hybrid search, which combines dense and BM25 sparse retrieval techniques.\n- Logging every step is essential for debugging production systems.\n\nAdditionally, there's an Agent Controller component but further details regarding its role in the RAG pipeline were not provided in the given information."
     }
   ],
-  "final_answer": " The key components of a complete RAG (Risk Assessment & Governance) pipeline are as follows:\n\n1. Risk Identification: This is the initial step where potential risks are identified and documented.\n\n2. Risk Assessment: Each risk is then assessed based on its likelihood and impact to determine its level of severity.\n\n3. Risk Mitigation: Strategies are developed to reduce or eliminate the identified risks, ensuring the successful delivery of projects.\n\n4. Reporting: The progress and outcomes of risk management activities are reported to relevant stakeholders, helping them make informed decisions.\n\nIn addition, for a complete RAG pipeline in production, it is also essential to have mechanisms for monitoring retrieval quality, latency, and logging every step for debugging purposes. These could involve tools like hybrid search (combining dense and BM25 sparse retrieval) and agent controllers, which are mentioned in the provided information.",
+  "final_answer": " The RAG pipeline, used for risk management, consists of several key components:\n\n1. **Risk Identification**: This is the initial phase where potential risks are identified within an organization.\n\n2. **Risk Analysis**: In this stage, the identified risks are evaluated based on their impact and likelihood of occurrence.\n\n3. **Governance/Mitigation**: After analyzing the risks, appropriate measures are taken to manage or mitigate them effectively.\n\nMoreover, completing a complete RAG pipeline in production involves:\n\n- Monitoring retrieval quality and latency during the MLOps process.\n- Utilizing hybrid search, which combines dense and BM25 sparse retrieval techniques.\n- Logging every step is essential for debugging production systems.\n\nAdditionally, there's an Agent Controller component but further details regarding its role in the RAG pipeline were not provided in the given information.",
   "success": true
 }

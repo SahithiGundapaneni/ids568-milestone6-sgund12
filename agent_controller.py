@@ -41,7 +41,8 @@ for doc in DOCUMENTS:
     all_chunks.append(doc["text"])
     chunk_metadata.append({"doc_id": doc["id"], "title": doc["title"]})
 
-embeddings = embedder.encode(all_chunks, convert_to_numpy=True)
+texts = [doc["text"] for doc in DOCUMENTS]
+embeddings = embedder.encode(texts, convert_to_numpy=True, batch_size=1)
 faiss.normalize_L2(embeddings)
 index = faiss.IndexFlatIP(embeddings.shape[1])
 index.add(embeddings)

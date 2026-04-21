@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "decision making process of an agent controller for tool selection",
-      "reasoning": "To find out the decision-making process for selecting a tool by an agent controller.",
+      "input": "agent controller decision making process",
+      "reasoning": "Understanding how an agent controller decides which tool to use requires knowledge about its decision-making process.",
       "result": {
         "tool": "retriever",
-        "query": "decision making process of an agent controller for tool selection",
+        "query": "agent controller decision making process",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.5075581073760986
+            "score": 0.8525538444519043
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.4941025972366333
+            "score": 0.8398695588111877
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.4941025972366333
+            "score": 0.8398695588111877
           }
         ]
       }
@@ -32,11 +32,11 @@
     {
       "step": 2,
       "action": "summarize",
-      "input": "Agent controller decides which tool to use based on the requirements of the task. For example, if the task involves summarizing a long passage, it might use the 'summarize' tool.",
+      "input": "The agent controller decides which tool to use based on the nature of the task. If it needs to search for facts, it uses 'retrieve'. The reason behind this is to find the necessary information required to answer or perform a specific action.",
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " The agent controller selects appropriate tools for tasks, such as utilizing a 'summarize' tool for condensing lengthy passages, ensuring that each task is handled efficiently and accurately."
+        "summary": " The agent controller selects appropriate tools according to the task at hand, utilizing 'retrieve' when needed for fact-finding missions, as this tool helps in gathering essential information to respond accurately or execute specific actions."
       }
     },
     {
@@ -44,9 +44,9 @@
       "action": "answer",
       "input": "How does an agent controller decide which tool to use?",
       "reasoning": "",
-      "result": " Based on the provided information, an agent controller decides which tool to use by considering the nature of the task at hand. For instance, if the task involves condensing lengthy passages, it would utilize a 'summarize' tool for efficient and accurate handling of the task. However, the provided info doesn't explicitly detail the decision-making process for choosing between different tools in complex scenarios where multiple tasks are involved or when there's a need to combine different tools for optimal results, as shown in the first retrieved result about hybrid search."
+      "result": " The agent controller decides which tool to use based on the nature of the task at hand. For fact-finding missions or when it needs to gather essential information to respond accurately or execute specific actions, it utilizes the 'retrieve' tool. This is because the 'retrieve' tool helps in gathering necessary data effectively."
     }
   ],
-  "final_answer": " Based on the provided information, an agent controller decides which tool to use by considering the nature of the task at hand. For instance, if the task involves condensing lengthy passages, it would utilize a 'summarize' tool for efficient and accurate handling of the task. However, the provided info doesn't explicitly detail the decision-making process for choosing between different tools in complex scenarios where multiple tasks are involved or when there's a need to combine different tools for optimal results, as shown in the first retrieved result about hybrid search.",
+  "final_answer": " The agent controller decides which tool to use based on the nature of the task at hand. For fact-finding missions or when it needs to gather essential information to respond accurately or execute specific actions, it utilizes the 'retrieve' tool. This is because the 'retrieve' tool helps in gathering necessary data effectively.",
   "success": true
 }

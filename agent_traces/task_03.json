@@ -14,43 +14,6 @@
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9397491812705994
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9289376735687256
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9289376735687256
-          }
-        ]
-      }
-    },
-    {
-      "step": 2,
-      "action": "summarize",
-      "input": "Chunking strategies are techniques used in natural language processing (NLP) and information retrieval to break down a large text corpus into smaller, more manageable parts called chunks. This is done to simplify the processing of complex data and improve efficiency. Some common chunking strategies include n-grams, sliding window, and keyword-based chunking. For small corpora, it's often beneficial to use keyword-based or n-gram-based chunking due to their simplicity and effectiveness in capturing important context.",
-      "reasoning": "The explanation for chunking strategies was retrieved from the knowledge base, then summarized for brevity. Keyword-based and n-gram-based chunking were mentioned as suitable options for small corpora because of their ability to capture important context efficiently.",
-      "result": {
-        "tool": "summarizer",
-        "summary": " Chunking strategies in NLP and information retrieval involve breaking down large text corpora into smaller, manageable parts called chunks for efficient processing of complex data. Common techniques include n-grams, sliding window, and keyword-based chunking. For smaller corpora, simple yet effective methods like keyword-based or n-gram-based chunking are often beneficial due to their ability to capture important context."
-      }
-    },
-    {
-      "step": 3,
-      "action": "retrieve",
-      "input": "Explain chunking strategies and which is best for small corpora.",
-      "reasoning": "",
-      "result": {
-        "tool": "retriever",
-        "query": "Explain chunking strategies and which is best for small corpora.",
-        "results": [
-          {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
             "score": 0.9397492408752441
           },
           {
@@ -67,13 +30,15 @@
       }
     },
     {
-      "step": 4,
+      "step": 2,
       "action": "answer",
-      "input": "Explain chunking strategies and which is best for small corpora.",
+      "input": {
+        "search_query": "explain chunking strategies and which is best for small corpora"
+      },
       "reasoning": "",
-      "result": " Chunking strategies in Natural Language Processing (NLP) and information retrieval refer to the process of breaking down large text corpora into smaller, manageable parts called chunks for efficient processing of complex data. Common techniques include n-grams, sliding window, and keyword-based chunking.\n\nFor smaller corpora, simple yet effective methods like keyword-based or n-gram-based chunking are often preferred due to their simplicity and speed. Keyword-based chunking focuses on breaking the text into chunks around specific keywords, making it easier to analyze and understand the data. On the other hand, n-grams involve taking contiguous sequences of n items from a given sample of text data, which can be useful for capturing patterns in the data without needing extensive preprocessing.\n\nHowever, it's important to note that the choice of chunking strategy depends on the specific needs and characteristics of your small corpus. For instance, if the goal is to capture longer phrases or sentences, sliding window may be a more appropriate approach. Additionally, some modern techniques like transformer-based models might provide better results for certain tasks but require larger datasets for training.\n\nIn summary, for small corpora, keyword-based and n-gram-based chunking are common and effective strategies, but it's essential to consider the specific needs of your project when choosing a method."
+      "result": " Chunking strategies are techniques used in information retrieval to break down a large corpus (a collection of text documents) into smaller, manageable pieces or chunks. This process helps to improve the efficiency and effectiveness of search queries by allowing systems to focus on specific parts of the data.\n\nThere are several chunking strategies:\n\n1. Document Chunking: This strategy breaks down a corpus into individual documents. It's useful when the goal is to find information within specific documents rather than across multiple ones.\n\n2. Passage Retrieval (PR): Also known as \"sentence ranking\", PR focuses on retrieving short passages or sentences that are most likely to contain the desired information, instead of entire documents.\n\n3. Dense Passage Retrieval (DPR): An extension of passage retrieval, DPR involves training a dense vector model that can represent whole documents and their sub-passages as single vectors in a high-dimensional space, facilitating efficient search.\n\n4. Hybrid Search: This strategy combines both sparse and dense retrieval methods to improve the precision of search results. It utilizes BM25 (a classic information retrieval model) for sparse retrieval and dense retrieval models like DPR for more accurate results.\n\nFor small corpora, Passage Retrieval or Hybrid Search might be more suitable due to their ability to focus on specific pieces of text and provide more precise results with less data. However, the optimal chunking strategy can also depend on factors such as the nature of the information being sought, the complexity of the corpus, and the requirements of the specific application."
     }
   ],
-  "final_answer": " Chunking strategies in Natural Language Processing (NLP) and information retrieval refer to the process of breaking down large text corpora into smaller, manageable parts called chunks for efficient processing of complex data. Common techniques include n-grams, sliding window, and keyword-based chunking.\n\nFor smaller corpora, simple yet effective methods like keyword-based or n-gram-based chunking are often preferred due to their simplicity and speed. Keyword-based chunking focuses on breaking the text into chunks around specific keywords, making it easier to analyze and understand the data. On the other hand, n-grams involve taking contiguous sequences of n items from a given sample of text data, which can be useful for capturing patterns in the data without needing extensive preprocessing.\n\nHowever, it's important to note that the choice of chunking strategy depends on the specific needs and characteristics of your small corpus. For instance, if the goal is to capture longer phrases or sentences, sliding window may be a more appropriate approach. Additionally, some modern techniques like transformer-based models might provide better results for certain tasks but require larger datasets for training.\n\nIn summary, for small corpora, keyword-based and n-gram-based chunking are common and effective strategies, but it's essential to consider the specific needs of your project when choosing a method.",
+  "final_answer": " Chunking strategies are techniques used in information retrieval to break down a large corpus (a collection of text documents) into smaller, manageable pieces or chunks. This process helps to improve the efficiency and effectiveness of search queries by allowing systems to focus on specific parts of the data.\n\nThere are several chunking strategies:\n\n1. Document Chunking: This strategy breaks down a corpus into individual documents. It's useful when the goal is to find information within specific documents rather than across multiple ones.\n\n2. Passage Retrieval (PR): Also known as \"sentence ranking\", PR focuses on retrieving short passages or sentences that are most likely to contain the desired information, instead of entire documents.\n\n3. Dense Passage Retrieval (DPR): An extension of passage retrieval, DPR involves training a dense vector model that can represent whole documents and their sub-passages as single vectors in a high-dimensional space, facilitating efficient search.\n\n4. Hybrid Search: This strategy combines both sparse and dense retrieval methods to improve the precision of search results. It utilizes BM25 (a classic information retrieval model) for sparse retrieval and dense retrieval models like DPR for more accurate results.\n\nFor small corpora, Passage Retrieval or Hybrid Search might be more suitable due to their ability to focus on specific pieces of text and provide more precise results with less data. However, the optimal chunking strategy can also depend on factors such as the nature of the information being sought, the complexity of the corpus, and the requirements of the specific application.",
   "success": true
 }

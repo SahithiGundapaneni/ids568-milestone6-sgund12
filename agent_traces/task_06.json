@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline.",
+      "input": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline.",
+        "query": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9540804028511047
+            "score": 0.6297656297683716
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9437026381492615
+            "score": 0.6221888661384583
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9437026381492615
+            "score": 0.6221888661384583
           }
         ]
       }
@@ -33,22 +33,50 @@
       "step": 2,
       "action": "summarize",
       "input": {
-        "search_query": "Evaluation metrics for a RAG pipeline"
+        "RAG": "Ranking, Agreement, and Grading",
+        "pipeline": "a sequence of tasks in NLP (Natural Language Processing) that involve Ranking the relevance of documents, Agreement among annotators about labels, and Grading the quality of summaries"
       },
-      "reasoning": "The response from the knowledge base will contain information about the evaluation metrics used for a RAG (Red, Amber, Green) pipeline. This system is commonly used in status reporting, and the evaluation metrics would help assess the accuracy and effectiveness of the pipeline.",
+      "reasoning": "Evaluation metrics for a RAG pipeline are specific to each task. For the Ranking task, common metrics include Mean Reciprocal Rank (MRR), Normalized Discounted Cumulative Gain (nDCG), and Precision at K (P@k). Agreement among annotators can be measured using Cohen's kappa coefficient or Fleiss' kappa. For Grading, metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) are commonly used.",
       "result": {
         "tool": "summarizer",
-        "summary": " RAG (Red, Amber, Green) pipelines are used to evaluate project progress. Common evaluation metrics for a RAG pipeline include the number of items in each category (Red, Amber, Green), the rate of change in categories, and the average time spent in each category. The goal is to optimize the pipeline to reduce the number of Red and Amber items, while improving the efficiency of Green items."
+        "summary": " The RAG pipeline in Natural Language Processing (NLP) is a series of tasks aimed at ranking relevant documents, ensuring agreement among annotators on label assignments, and grading the quality of generated summaries. It's designed to improve the overall efficiency and accuracy of various NLP applications."
       }
     },
     {
       "step": 3,
+      "action": "retrieve",
+      "input": "Describe evaluation metrics for a RAG pipeline.",
+      "reasoning": "JSON fallback",
+      "result": {
+        "tool": "retriever",
+        "query": "Describe evaluation metrics for a RAG pipeline.",
+        "results": [
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.3629050850868225
+          },
+          {
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.3573859632015228
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.3573859632015228
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
       "action": "answer",
       "input": "Describe evaluation metrics for a RAG pipeline.",
       "reasoning": "",
-      "result": " Evaluation metrics for a RAG (Red, Amber, Green) pipeline are primarily focused on measuring the progress and quality of projects. Here are some common metrics:\n\n1. **Distribution of Items**: The number of items in each category (Red, Amber, Green) provides insight into the current state and overall health of the project. An ideal RAG pipeline should have a minimal number of Red items, indicating issues that need immediate attention, and a majority of Green items, signifying well-performing tasks.\n\n2. **Rate of Change**: Monitoring the rate at which items move from one category to another (from Red to Amber, or from Amber to Green) can help identify trends and patterns, such as areas requiring improvement or where corrective actions are effective.\n\n3. **Average Time Spent in Each Category**: This metric helps evaluate the duration tasks remain in each state, with a shorter time spent in Red and Amber categories indicating more efficient resolution of issues.\n\n4. **Latency**: In the context of a retrieval system (RETRIEVE section), latency refers to the time it takes for the system to retrieve relevant information. Minimizing latency is essential for a smooth-running RAG pipeline as it ensures timely decision making and project progress.\n\n5. **Quality**: The quality of the results retrieved by the system, especially when using hybrid search methods combining dense and sparse retrieval techniques, can significantly impact the accuracy of the RAG pipeline's assessments. Ensuring high-quality results is crucial for maintaining an effective and reliable RAG pipeline."
+      "result": " The evaluation metrics for a RAG pipeline in Natural Language Processing (NLP) can be categorized into three main areas: Retrieval, Agreement, and Grading.\n\n1. **Retrieval Evaluation**: Measures the effectiveness of document retrieval. Common metrics include Recall, Precision, F1-score, and Normalized Discounted Cumulative Gain (NDCG). In a RAG pipeline, retrieval quality and latency are crucial for ensuring efficient and accurate information retrieval.\n\n2. **Agreement Evaluation**: Assesses the consistency among annotators or models in labeling documents. Measures like Cohen's kappa, Scott's pi, and Fleiss' kappa can be used to evaluate inter-annotator agreement (IAA) or inter-rater reliability. High IAA indicates better agreement among annotators.\n\n3. **Grading Evaluation**: Estimates the quality of generated summaries by comparing them with human-written summaries. Automatic metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual Evaluation Understudy) are commonly used to compare the quality and fluency of machine-generated summaries with human-written summaries.\n\nIn addition, it's essential to log every step in a production RAG pipeline for debugging purposes and to monitor system performance."
     }
   ],
-  "final_answer": " Evaluation metrics for a RAG (Red, Amber, Green) pipeline are primarily focused on measuring the progress and quality of projects. Here are some common metrics:\n\n1. **Distribution of Items**: The number of items in each category (Red, Amber, Green) provides insight into the current state and overall health of the project. An ideal RAG pipeline should have a minimal number of Red items, indicating issues that need immediate attention, and a majority of Green items, signifying well-performing tasks.\n\n2. **Rate of Change**: Monitoring the rate at which items move from one category to another (from Red to Amber, or from Amber to Green) can help identify trends and patterns, such as areas requiring improvement or where corrective actions are effective.\n\n3. **Average Time Spent in Each Category**: This metric helps evaluate the duration tasks remain in each state, with a shorter time spent in Red and Amber categories indicating more efficient resolution of issues.\n\n4. **Latency**: In the context of a retrieval system (RETRIEVE section), latency refers to the time it takes for the system to retrieve relevant information. Minimizing latency is essential for a smooth-running RAG pipeline as it ensures timely decision making and project progress.\n\n5. **Quality**: The quality of the results retrieved by the system, especially when using hybrid search methods combining dense and sparse retrieval techniques, can significantly impact the accuracy of the RAG pipeline's assessments. Ensuring high-quality results is crucial for maintaining an effective and reliable RAG pipeline.",
+  "final_answer": " The evaluation metrics for a RAG pipeline in Natural Language Processing (NLP) can be categorized into three main areas: Retrieval, Agreement, and Grading.\n\n1. **Retrieval Evaluation**: Measures the effectiveness of document retrieval. Common metrics include Recall, Precision, F1-score, and Normalized Discounted Cumulative Gain (NDCG). In a RAG pipeline, retrieval quality and latency are crucial for ensuring efficient and accurate information retrieval.\n\n2. **Agreement Evaluation**: Assesses the consistency among annotators or models in labeling documents. Measures like Cohen's kappa, Scott's pi, and Fleiss' kappa can be used to evaluate inter-annotator agreement (IAA) or inter-rater reliability. High IAA indicates better agreement among annotators.\n\n3. **Grading Evaluation**: Estimates the quality of generated summaries by comparing them with human-written summaries. Automatic metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual Evaluation Understudy) are commonly used to compare the quality and fluency of machine-generated summaries with human-written summaries.\n\nIn addition, it's essential to log every step in a production RAG pipeline for debugging purposes and to monitor system performance.",
   "success": true
 }

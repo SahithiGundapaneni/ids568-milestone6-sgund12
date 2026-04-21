@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "best practices for monitoring a production RAG system",
+      "input": "best practices for monitoring a production RAG (Red-Amber-Green) system",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "best practices for monitoring a production RAG system",
+        "query": "best practices for monitoring a production RAG (Red-Amber-Green) system",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.464727520942688
+            "score": 0.9540804028511047
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.4580678343772888
+            "score": 0.9437026381492615
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.4580678343772888
+            "score": 0.9437026381492615
           }
         ]
       }
@@ -32,26 +32,26 @@
     {
       "step": 2,
       "action": "retrieve",
-      "input": "monitoring requirements for a production RAG (Red-Amber-Green) system",
+      "input": "monitoring requirements for a production RAG system",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "monitoring requirements for a production RAG (Red-Amber-Green) system",
+        "query": "monitoring requirements for a production RAG system",
         "results": [
-          {
-            "title": "Embedding Models",
-            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
-            "score": 0.017026718705892563
-          },
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.01687563583254814
+            "score": 0.8754058480262756
           },
           {
-            "title": "Vector Databases",
-            "text": "FAISS is an open-source library for efficient similarity search. Chroma adds metadata filtering and persistence. FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
-            "score": 0.01647004671394825
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.8627749681472778
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.8627749681472778
           }
         ]
       }
@@ -59,26 +59,26 @@
     {
       "step": 3,
       "action": "retrieve",
-      "input": "monitoring required for a production RAG system",
+      "input": "monitoring requirements for a production RAG system",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "monitoring required for a production RAG system",
+        "query": "monitoring requirements for a production RAG system",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.8754057884216309
+            "score": 0.8754058480262756
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.8627748489379883
+            "score": 0.8627749681472778
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.8627748489379883
+            "score": 0.8627749681472778
           }
         ]
       }
@@ -86,11 +86,11 @@
     {
       "step": 4,
       "action": "summarize",
-      "input": "Information about the monitoring needed for a production RAG system. Key points could include status checks (R - Red, A - Amber, G - Green), alerts and notifications settings, incident logging and reporting, user access controls, system performance, and data integrity checks.",
+      "input": "Information about the monitoring needed for a production RAG system.",
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " A production RAG (Red-Amber-Green) system requires regular monitoring to ensure its effectiveness. Key aspects include status checks (R for critical issues, A for potential problems, G for normal operations), customizable alerts and notifications, incident logging and reporting, secure user access controls, performance analysis, and data integrity checks to maintain system reliability and efficiency."
+        "summary": " A Production RAG (Red, Amber, Green) system requires continuous monitoring to assess the status of key performance indicators (KPIs). This includes regular data collection, analysis, and comparison against predefined thresholds to determine if the system is operating within acceptable levels (Green), approaching a critical state (Amber), or already in a critical state (Red). Effective communication of these statuses is crucial for prompt action and maintaining optimal production efficiency."
       }
     },
     {
@@ -98,9 +98,9 @@
       "action": "answer",
       "input": "What monitoring is needed for a production RAG system?",
       "reasoning": "",
-      "result": " To maintain a production RAG system effectively, the following monitoring is essential:\n\n1. Retrieval Quality: Monitor the accuracy of information retrieval using hybrid search methods that combine dense and BM25 sparse retrieval.\n\n2. Latency: Keep track of the system's response time for optimal performance.\n\n3. Logging Every Step: Detailed logging at each stage is crucial for debugging production systems, making it easier to identify any issues or errors.\n\n4. Embedding Models: Monitor the models used for converting text into dense vectors, like all-MiniLM-L6-v2 that produces 384-dimensional embeddings, and utilize Cosine similarity to rank retrieved documents by relevance.\n\n5. Agent Controllers (if applicable): These can provide a means of managing the behavior of multiple agents within the system.\n\n6. Customizable Alerts and Notifications: Ensure that notifications are set up for critical issues, potential problems, and normal operations to keep users informed.\n\n7. Secure User Access Controls: Establish stringent access controls to protect sensitive data and ensure only authorized individuals can interact with the system.\n\n8. Performance Analysis: Regularly analyze performance metrics such as throughput, latency, and resource usage to optimize the system's efficiency.\n\n9. Data Integrity Checks: Implement measures to verify the integrity of data being processed and stored within the RAG system."
+      "result": " For a production RAG (Red-Amber-Green) system, continuous monitoring is necessary to assess the status of key performance indicators (KPIs). Key areas to focus on include:\n\n1. Retrieval Quality and Latency: Utilize hybrid search techniques that combine dense and BM25 sparse retrieval for optimal results. Monitoring these aspects helps maintain high-quality outputs while ensuring efficient response times.\n\n2. Logging every step is essential: Detailed logging of each operation in the system allows for better debugging when issues arise in production systems.\n\n3. Regular Data Collection, Analysis, and Comparison: Continuously collect data from the RAG system to analyze its performance over time. Compare the results against predefined thresholds to determine if the system is operating within acceptable levels (Green), approaching a critical state (Amber), or already in a critical state (Red).\n\n4. Agent Controllers: Implement agent controllers to manage and monitor multiple agents that make up the RAG system, ensuring smooth and efficient operation across all components."
     }
   ],
-  "final_answer": " To maintain a production RAG system effectively, the following monitoring is essential:\n\n1. Retrieval Quality: Monitor the accuracy of information retrieval using hybrid search methods that combine dense and BM25 sparse retrieval.\n\n2. Latency: Keep track of the system's response time for optimal performance.\n\n3. Logging Every Step: Detailed logging at each stage is crucial for debugging production systems, making it easier to identify any issues or errors.\n\n4. Embedding Models: Monitor the models used for converting text into dense vectors, like all-MiniLM-L6-v2 that produces 384-dimensional embeddings, and utilize Cosine similarity to rank retrieved documents by relevance.\n\n5. Agent Controllers (if applicable): These can provide a means of managing the behavior of multiple agents within the system.\n\n6. Customizable Alerts and Notifications: Ensure that notifications are set up for critical issues, potential problems, and normal operations to keep users informed.\n\n7. Secure User Access Controls: Establish stringent access controls to protect sensitive data and ensure only authorized individuals can interact with the system.\n\n8. Performance Analysis: Regularly analyze performance metrics such as throughput, latency, and resource usage to optimize the system's efficiency.\n\n9. Data Integrity Checks: Implement measures to verify the integrity of data being processed and stored within the RAG system.",
+  "final_answer": " For a production RAG (Red-Amber-Green) system, continuous monitoring is necessary to assess the status of key performance indicators (KPIs). Key areas to focus on include:\n\n1. Retrieval Quality and Latency: Utilize hybrid search techniques that combine dense and BM25 sparse retrieval for optimal results. Monitoring these aspects helps maintain high-quality outputs while ensuring efficient response times.\n\n2. Logging every step is essential: Detailed logging of each operation in the system allows for better debugging when issues arise in production systems.\n\n3. Regular Data Collection, Analysis, and Comparison: Continuously collect data from the RAG system to analyze its performance over time. Compare the results against predefined thresholds to determine if the system is operating within acceptable levels (Green), approaching a critical state (Amber), or already in a critical state (Red).\n\n4. Agent Controllers: Implement agent controllers to manage and monitor multiple agents that make up the RAG system, ensuring smooth and efficient operation across all components.",
   "success": true
 }

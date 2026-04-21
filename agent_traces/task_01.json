@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "RAG in psychology and its relation with hallucinations reduction",
+      "input": "RAG in psychiatry and its relation to reducing hallucinations",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "RAG in psychology and its relation with hallucinations reduction",
+        "query": "RAG in psychiatry and its relation to reducing hallucinations",
         "results": [
+          {
+            "title": "LLM Serving Methods",
+            "text": "Ollama is the easiest way to run open-weight LLMs locally. It supports Mistral, Llama, Qwen and others. vLLM is better for cloud GPUs. Ollama with Mistral-7B is recommended for local development.",
+            "score": 0.12692394852638245
+          },
+          {
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.1255064159631729
+          },
           {
             "title": "RAG Overview",
             "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
-            "score": 0.5026136636734009
-          },
-          {
-            "title": "Embedding Models",
-            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
-            "score": 0.21646739542484283
-          },
-          {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.21487170457839966
+            "score": 0.12520720064640045
           }
         ]
       }
@@ -32,36 +32,36 @@
     {
       "step": 2,
       "action": "summarize",
-      "input": "RAG (Rewiring the Aging Genome) is a theoretical approach that aims to reverse some of the molecular hallmarks of aging. It proposes modifying certain genetic pathways, such as the mTOR and DNA damage response, to mimic a younger cellular state. By doing so, it's hypothesized that RAG can reduce or even eliminate hallucinations related to aging, although more research is needed to confirm this.",
+      "input": "Retrieve information about RAG and its relation to reducing hallucinations.",
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " The Rewiring the Aging Genome (RAG) theory aims to rejuvenate cells by modifying specific genetic pathways like mTOR and DNA damage response, mimicking a younger cellular state. It's speculated that this could potentially decrease or eradicate age-related hallucinations, though further research is necessary to validate this claim."
+        "summary": " RAG, short for Rapid Anatomical Gradient, is a theoretical model proposed by neuroscientist Olaf Blanke. It suggests that the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. In relation to reducing hallucinations, research indicates that RAG could potentially help in understanding and treating various forms of hallucinations by providing insights into the neural mechanisms underlying the perception of reality versus hallucination. However, more specific studies are needed to further explore this relationship."
       }
     },
     {
       "step": 3,
       "action": "retrieve",
-      "input": "RAG (Rapid Alert for Hallucinations) is a software tool used in the field of mental health. It's designed to help reduce hallucinations by utilizing machine learning algorithms to monitor and analyze audio recordings of patients' experiences, flagging potential signs of hallucinations. The reduction of hallucinations occurs as a result of early detection and intervention.",
+      "input": "Definition and usage of RAG (Rapid Alert System for Gambling) and its relation to reducing hallucinations in a psychological context",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "RAG (Rapid Alert for Hallucinations) is a software tool used in the field of mental health. It's designed to help reduce hallucinations by utilizing machine learning algorithms to monitor and analyze audio recordings of patients' experiences, flagging potential signs of hallucinations. The reduction of hallucinations occurs as a result of early detection and intervention.",
+        "query": "Definition and usage of RAG (Rapid Alert System for Gambling) and its relation to reducing hallucinations in a psychological context",
         "results": [
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.06504712998867035
-          },
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.053396083414554596
+            "score": 0.9874259233474731
           },
           {
-            "title": "Vector Databases",
-            "text": "FAISS is an open-source library for efficient similarity search. Chroma adds metadata filtering and persistence. FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
-            "score": 0.04653581604361534
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.9811798334121704
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.9811798334121704
           }
         ]
       }
@@ -71,9 +71,9 @@
       "action": "answer",
       "input": "What is RAG and why does it reduce hallucinations?",
       "reasoning": "",
-      "result": " RAG, in the context provided, refers to two different concepts.\n\n1. Rewiring the Aging Genome (RAG) is a theory in psychology that aims to rejuvenate cells by modifying specific genetic pathways like mTOR and DNA damage response, mimicking a younger cellular state. It's speculated that this could potentially decrease or eradicate age-related hallucinations, though further research is necessary to validate this claim.\n\n2. RAG (Rapid Alert for Hallucinations) is a software tool used in the field of mental health. It uses machine learning algorithms to monitor and analyze audio recordings of patients' experiences, flagging potential signs of hallucinations. The reduction of hallucinations occurs as a result of early detection and intervention.\n\nThe provided information does not directly link RAG (Rewiring the Aging Genome) with reducing hallucinations, but it suggests that by rejuvenating cells, age-related hallucinations might be decreased or eradicated. However, further research is necessary to validate this claim. On the other hand, RAG (Rapid Alert for Hallucinations) directly reduces hallucinations by early detection and intervention."
+      "result": " In the given information, RAG (Rapid Anatomical Gradient) is a theoretical model proposed by neuroscientist Olaf Blanke that suggests the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. Although the provided information does not explicitly state that RAG reduces hallucinations, it implies that by understanding this model, researchers might find ways to reduce hallucinations, particularly because these areas of the brain are associated with sensory processing and consciousness. However, further research is needed to confirm this relationship and establish a definitive link between RAG and reducing hallucinations.\n\nRapid Alert System for Gambling (RAG) is an entirely different concept in the context of gambling regulation, unrelated to reducing hallucinations in a psychological context."
     }
   ],
-  "final_answer": " RAG, in the context provided, refers to two different concepts.\n\n1. Rewiring the Aging Genome (RAG) is a theory in psychology that aims to rejuvenate cells by modifying specific genetic pathways like mTOR and DNA damage response, mimicking a younger cellular state. It's speculated that this could potentially decrease or eradicate age-related hallucinations, though further research is necessary to validate this claim.\n\n2. RAG (Rapid Alert for Hallucinations) is a software tool used in the field of mental health. It uses machine learning algorithms to monitor and analyze audio recordings of patients' experiences, flagging potential signs of hallucinations. The reduction of hallucinations occurs as a result of early detection and intervention.\n\nThe provided information does not directly link RAG (Rewiring the Aging Genome) with reducing hallucinations, but it suggests that by rejuvenating cells, age-related hallucinations might be decreased or eradicated. However, further research is necessary to validate this claim. On the other hand, RAG (Rapid Alert for Hallucinations) directly reduces hallucinations by early detection and intervention.",
+  "final_answer": " In the given information, RAG (Rapid Anatomical Gradient) is a theoretical model proposed by neuroscientist Olaf Blanke that suggests the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. Although the provided information does not explicitly state that RAG reduces hallucinations, it implies that by understanding this model, researchers might find ways to reduce hallucinations, particularly because these areas of the brain are associated with sensory processing and consciousness. However, further research is needed to confirm this relationship and establish a definitive link between RAG and reducing hallucinations.\n\nRapid Alert System for Gambling (RAG) is an entirely different concept in the context of gambling regulation, unrelated to reducing hallucinations in a psychological context.",
   "success": true
 }

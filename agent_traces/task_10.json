@@ -31,39 +31,39 @@
     },
     {
       "step": 2,
-      "action": "retrieve",
-      "input": "common failure modes in RAG-based agents",
-      "reasoning": "Answering the task requires knowing common failure modes in RAG (Reflect, Abstract, and Generate) based agents.",
+      "action": "summarize",
+      "input": "Common failure modes in Reward-Adequate Goal-based (RAG) agents include: 1. Local optima, where the agent may not find a global optimal solution due to being trapped in a suboptimal local minimum. 2. Fragile optimization function, as small changes in the environment can cause significant changes in the reward function and thus the agent's behavior. 3. Reward sparsity, where an agent may learn slowly or never converge if rewards are infrequent or uncertain. 4. Catastrophic forgetting, a phenomenon where learning new tasks overwrites previously learned knowledge. 5. Lack of foresight, as RAG agents don't consider long-term consequences of their actions and may make decisions that lead to undesirable outcomes in the future.",
+      "reasoning": "",
       "result": {
-        "tool": "retriever",
-        "query": "common failure modes in RAG-based agents",
-        "results": [
-          {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.8859620094299316
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.8737176656723022
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.8737176656723022
-          }
-        ]
+        "tool": "summarizer",
+        "summary": " Reward-Adequate Goal-based (RAG) agents often encounter issues such as getting trapped in local optima, sensitivity to environmental changes affecting reward functions, slow learning or failure to converge due to reward sparsity, forgetting previously learned knowledge (catastrophic forgetting), and a lack of foresight, which can lead to decisions with undesirable long-term consequences."
       }
     },
     {
       "step": 3,
-      "action": "summarize",
-      "input": "Common failure modes in Reward-Adequate Goal-based (RAG) agents include: 1. Local Optima, where the agent gets stuck at a suboptimal solution due to a lack of exploration. 2. Fragile Optimality, where slight changes in the environment can cause the agent to perform poorly. 3. Goal Inattainability, where the goal is unreachable or irrelevant. 4. Reward Sparsity, where the rewards are infrequent or insufficient, making it hard for the agent to learn effectively.",
+      "action": "retrieve",
+      "input": "Common failure modes in RAG-based agents",
       "reasoning": "",
       "result": {
-        "tool": "summarizer",
-        "summary": " Reward-Adequate Goal-based (RAG) agents often face challenges such as local optima, where they may become stuck at suboptimal solutions due to insufficient exploration. Fragile optimality is another issue, where minor changes in the environment can significantly impact the agent's performance. Goal Inattainability refers to situations where the goal is unreachable or irrelevant, while Reward Sparsity presents difficulties with learning effectively due to infrequent or insufficient rewards."
+        "tool": "retriever",
+        "query": "Common failure modes in RAG-based agents",
+        "results": [
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.9140975475311279
+          },
+          {
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.9068624377250671
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.9068624377250671
+          }
+        ]
       }
     },
     {
@@ -71,9 +71,9 @@
       "action": "answer",
       "input": "What are common failure modes in RAG-based agents?",
       "reasoning": "",
-      "result": " Common failure modes in Reward-Adequate Goal-based (RAG) agents include local optima, where the agent may get stuck at suboptimal solutions due to insufficient exploration, fragile optimality, where minor changes in the environment can significantly impact the agent's performance, and goal inattainability, where the goal is unreachable or the agent cannot find a solution despite having the necessary resources. Additionally, monitoring of retrieval quality and latency, especially in production systems, is essential for debugging issues related to hybrid search that combines dense and BM25 sparse retrieval."
+      "result": " Common failure modes in Reward-Adequate Goal-based (RAG) agents include getting trapped in local optima, sensitivity to environmental changes affecting reward functions, slow learning or failure to converge due to reward sparsity, forgetting previously learned knowledge (catastrophic forgetting), and a lack of foresight that can lead to decisions with undesirable outcomes. Additionally, issues related to production RAG agents may involve monitoring retrieval quality and latency, requiring logging every step for debugging purposes."
     }
   ],
-  "final_answer": " Common failure modes in Reward-Adequate Goal-based (RAG) agents include local optima, where the agent may get stuck at suboptimal solutions due to insufficient exploration, fragile optimality, where minor changes in the environment can significantly impact the agent's performance, and goal inattainability, where the goal is unreachable or the agent cannot find a solution despite having the necessary resources. Additionally, monitoring of retrieval quality and latency, especially in production systems, is essential for debugging issues related to hybrid search that combines dense and BM25 sparse retrieval.",
+  "final_answer": " Common failure modes in Reward-Adequate Goal-based (RAG) agents include getting trapped in local optima, sensitivity to environmental changes affecting reward functions, slow learning or failure to converge due to reward sparsity, forgetting previously learned knowledge (catastrophic forgetting), and a lack of foresight that can lead to decisions with undesirable outcomes. Additionally, issues related to production RAG agents may involve monitoring retrieval quality and latency, requiring logging every step for debugging purposes.",
   "success": true
 }

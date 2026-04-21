@@ -14,17 +14,17 @@
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.4832956790924072
+            "score": 0.8859620094299316
           },
           {
-            "title": "RAG Overview",
-            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
-            "score": 0.480709433555603
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.8737176656723022
           },
           {
-            "title": "Evaluation Metrics",
-            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
-            "score": 0.480551540851593
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.8737176656723022
           }
         ]
       }
@@ -32,26 +32,26 @@
     {
       "step": 2,
       "action": "retrieve",
-      "input": "Lightweight embedding models for RAG (Retrieval-Augmented Generation) systems",
+      "input": "Lightweight embedding models for RAG (ReasoNing Agents) systems",
       "reasoning": "",
       "result": {
         "tool": "retriever",
-        "query": "Lightweight embedding models for RAG (Retrieval-Augmented Generation) systems",
+        "query": "Lightweight embedding models for RAG (ReasoNing Agents) systems",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.05301498621702194
+            "score": 0.9311083555221558
           },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.05052248761057854
+            "score": 0.919883668422699
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.05052248761057854
+            "score": 0.919883668422699
           }
         ]
       }
@@ -86,11 +86,11 @@
     {
       "step": 4,
       "action": "summarize",
-      "input": "In the context of lightweight RAG (Retrieval-Analysis-Generation) systems for conversational AI, models like BERT (Bidirectional Encoder Representations from Transformers) and its variants may be too heavy. For a lightweight solution, consider using models such as DistilBERT or MobileBERT, which are smaller versions of the original BERT model but still maintain high performance.",
+      "input": "Lightweight RAG (Read-Ask-Generate) system requires an embedding model that is efficient and compact. One suitable option could be BERT-mini or MobileBERT, which are lighter versions of the well-known BERT model. These models have been designed to work on resource-limited devices.",
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " In the realm of lightweight Conversational AI, traditional heavy models like BERT can be less suitable due to resource requirements. To address this, more compact alternatives such as DistilBERT and MobileBERT, which retain high performance while being smaller versions of the original BERT model, are recommended for creating lightweight Retrieval-Analysis-Generation (RAG) systems."
+        "summary": " The Lightweight RAG (Read-Ask-Generate) system utilizes compact and efficient embedding models like BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. Designed for resource-limited devices, these lightweight models enable efficient language understanding and generation tasks."
       }
     },
     {
@@ -98,9 +98,9 @@
       "action": "answer",
       "input": "What embedding model suits a lightweight RAG system?",
       "reasoning": "",
-      "result": " For a lightweight RAG (Retrieval-Augmented Generation) system, DistilBERT or MobileBERT could be suitable. These models maintain high performance while being smaller versions of the original BERT model, making them more appropriate for resource-constrained scenarios like lightweight Conversational AI applications. However, it's worth noting that hybrid search methods combining dense and sparse retrieval may also be beneficial for optimizing latency in RAG systems, as suggested in the \"MLOps and RAG in Production\" document."
+      "result": " The Lightweight RAG (Read-Ask-Generate) system would benefit from using compact and efficient embedding models such as BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. These lightweight models are designed for resource-limited devices, enabling efficient language understanding and generation tasks in the RAG system."
     }
   ],
-  "final_answer": " For a lightweight RAG (Retrieval-Augmented Generation) system, DistilBERT or MobileBERT could be suitable. These models maintain high performance while being smaller versions of the original BERT model, making them more appropriate for resource-constrained scenarios like lightweight Conversational AI applications. However, it's worth noting that hybrid search methods combining dense and sparse retrieval may also be beneficial for optimizing latency in RAG systems, as suggested in the \"MLOps and RAG in Production\" document.",
+  "final_answer": " The Lightweight RAG (Read-Ask-Generate) system would benefit from using compact and efficient embedding models such as BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. These lightweight models are designed for resource-limited devices, enabling efficient language understanding and generation tasks in the RAG system.",
   "success": true
 }
