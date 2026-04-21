@@ -1,0 +1,463 @@
+[
+  {
+    "query": "What is Retrieval-Augmented Generation?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.6902139782905579,
+        "retrieval_latency_ms": 2417.8967475891113
+      },
+      {
+        "chunk": "Retrieval evaluation uses Precision at K and Recall at K metrics.\n     Precision at K measures the fraction of top-K results that are relevant.\n     Recall at K measures the fraction of relevant documents retrieved in top-K.\n     Hallucination rate counts statements not supported by retrieved documents.\n     End-to-end latency equals retrieval latency plus generation latency.",
+        "metadata": {
+          "doc_id": "doc6",
+          "title": "Evaluation Metrics",
+          "chunk_index": 0
+        },
+        "score": 0.5065250992774963,
+        "retrieval_latency_ms": 2417.8967475891113
+      },
+      {
+        "chunk": "Production RAG systems require monitoring of retrieval quality and latency.\n     Drift in document distribution can degrade retrieval performance over time.\n     Reranking models improve precision by re-scoring retrieved chunks.\n     Hybrid search combines dense retrieval with BM25 sparse retrieval for better recall.\n     Logging every retrieval and generation step is essential for debugging.",
+        "metadata": {
+          "doc_id": "doc8",
+          "title": "MLOps and RAG in Production",
+          "chunk_index": 0
+        },
+        "score": 0.43266552686691284,
+        "retrieval_latency_ms": 2417.8967475891113
+      }
+    ],
+    "answer": " Retrieval-Augmented Generation (RAG) is a system that combines a retriever and a generator. The retriever finds relevant documents from a vector store using semantic similarity, while the generator uses the retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+    "latency": {
+      "retrieval_ms": 2417.8967475891113,
+      "generation_s": 13.082382917404175,
+      "total_s": 15.502025842666626
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc1"
+    ]
+  },
+  {
+    "query": "How does FAISS differ from Chroma?",
+    "retrieved_chunks": [
+      {
+        "chunk": "FAISS is an open-source library for efficient similarity search over dense vectors.\n     It supports exact and approximate nearest-neighbor search.\n     Chroma is another open-source vector database that adds metadata filtering.\n     Both are widely used in RAG pipelines.\n     FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+        "metadata": {
+          "doc_id": "doc2",
+          "title": "Vector Databases",
+          "chunk_index": 0
+        },
+        "score": 0.45805782079696655,
+        "retrieval_latency_ms": 2372.3230361938477
+      },
+      {
+        "chunk": "Fixed-size chunking splits documents into equal-length segments with overlap.\n     Semantic chunking splits on sentence or paragraph boundaries.\n     Smaller chunks give more precise retrieval but lose context.\n     Larger chunks keep more context but may retrieve irrelevant content.\n     A chunk size of 512 with 10 percent overlap is a common starting point.",
+        "metadata": {
+          "doc_id": "doc3",
+          "title": "Chunking Strategies",
+          "chunk_index": 0
+        },
+        "score": 0.09751678258180618,
+        "retrieval_latency_ms": 2372.3230361938477
+      },
+      {
+        "chunk": "Sentence transformers convert text into dense vector representations.\n     all-MiniLM-L6-v2 produces 384-dimensional embeddings and is fast and lightweight.\n     Embeddings capture semantic meaning, enabling similarity search beyond keyword matching.\n     Cosine similarity is used to rank retrieved documents by relevance.",
+        "metadata": {
+          "doc_id": "doc4",
+          "title": "Embedding Models",
+          "chunk_index": 0
+        },
+        "score": 0.09235930442810059,
+        "retrieval_latency_ms": 2372.3230361938477
+      }
+    ],
+    "answer": " FAISS primarily differs from Chroma in terms of features and functionalities. FAISS is a library for efficient similarity search over dense vectors, focusing on pure retrieval and being faster due to its optimized algorithms for exact and approximate nearest-neighbor search. On the other hand, Chroma is an open-source vector database that adds metadata filtering, making it easier for filtered searches with the ability to narrow down results based on additional criteria.",
+    "latency": {
+      "retrieval_ms": 2372.3230361938477,
+      "generation_s": 15.108444929122925,
+      "total_s": 17.481266975402832
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc2"
+    ]
+  },
+  {
+    "query": "What chunk size is recommended for RAG?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Fixed-size chunking splits documents into equal-length segments with overlap.\n     Semantic chunking splits on sentence or paragraph boundaries.\n     Smaller chunks give more precise retrieval but lose context.\n     Larger chunks keep more context but may retrieve irrelevant content.\n     A chunk size of 512 with 10 percent overlap is a common starting point.",
+        "metadata": {
+          "doc_id": "doc3",
+          "title": "Chunking Strategies",
+          "chunk_index": 0
+        },
+        "score": 0.405369371175766,
+        "retrieval_latency_ms": 560.1258277893066
+      },
+      {
+        "chunk": "Production RAG systems require monitoring of retrieval quality and latency.\n     Drift in document distribution can degrade retrieval performance over time.\n     Reranking models improve precision by re-scoring retrieved chunks.\n     Hybrid search combines dense retrieval with BM25 sparse retrieval for better recall.\n     Logging every retrieval and generation step is essential for debugging.",
+        "metadata": {
+          "doc_id": "doc8",
+          "title": "MLOps and RAG in Production",
+          "chunk_index": 0
+        },
+        "score": 0.31946882605552673,
+        "retrieval_latency_ms": 560.1258277893066
+      },
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.30069199204444885,
+        "retrieval_latency_ms": 560.1258277893066
+      }
+    ],
+    "answer": " The context does not provide a specific chunk size recommendation for Retrieval-Augmented Generation (RAG). However, it does mention that a chunk size of 512 with 10 percent overlap is a common starting point for fixed-size chunking in another context. But, the optimal chunk size for RAG may vary depending on specific use cases and performance requirements.",
+    "latency": {
+      "retrieval_ms": 560.1258277893066,
+      "generation_s": 14.003462076187134,
+      "total_s": 14.563868045806885
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc3"
+    ]
+  },
+  {
+    "query": "What does all-MiniLM-L6-v2 produce?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Sentence transformers convert text into dense vector representations.\n     all-MiniLM-L6-v2 produces 384-dimensional embeddings and is fast and lightweight.\n     Embeddings capture semantic meaning, enabling similarity search beyond keyword matching.\n     Cosine similarity is used to rank retrieved documents by relevance.",
+        "metadata": {
+          "doc_id": "doc4",
+          "title": "Embedding Models",
+          "chunk_index": 0
+        },
+        "score": 0.27931803464889526,
+        "retrieval_latency_ms": 1094.2790508270264
+      },
+      {
+        "chunk": "Ollama is the easiest way to run open-weight LLMs locally on a Mac.\n     It supports Mistral, Llama, Qwen, and many other models.\n     vLLM is a high-throughput serving framework for cloud GPUs.\n     Hugging Face Transformers is the most flexible option but needs more setup.\n     For local development, Ollama with Mistral-7B is the recommended setup.",
+        "metadata": {
+          "doc_id": "doc7",
+          "title": "LLM Serving Methods",
+          "chunk_index": 0
+        },
+        "score": 0.17291268706321716,
+        "retrieval_latency_ms": 1094.2790508270264
+      },
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.17085504531860352,
+        "retrieval_latency_ms": 1094.2790508270264
+      }
+    ],
+    "answer": " all-MiniLM-L6-v2 produces 384-dimensional embeddings.",
+    "latency": {
+      "retrieval_ms": 1094.2790508270264,
+      "generation_s": 7.804260730743408,
+      "total_s": 8.899399757385254
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc4"
+    ]
+  },
+  {
+    "query": "How does an agent controller select tools?",
+    "retrieved_chunks": [
+      {
+        "chunk": "An agent controller orchestrates multiple tools to complete multi-step tasks.\n     The controller receives a task, selects appropriate tools, and uses results to plan next steps.\n     Tool selection can be rule-based or LLM-driven.\n     Common tools include retrievers, summarizers, classifiers, and calculators.\n     Transparency in tool selection is critical for debugging and trust.",
+        "metadata": {
+          "doc_id": "doc5",
+          "title": "Agent Controllers",
+          "chunk_index": 0
+        },
+        "score": 0.8205924034118652,
+        "retrieval_latency_ms": 359.5418930053711
+      },
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.15179508924484253,
+        "retrieval_latency_ms": 359.5418930053711
+      },
+      {
+        "chunk": "Production RAG systems require monitoring of retrieval quality and latency.\n     Drift in document distribution can degrade retrieval performance over time.\n     Reranking models improve precision by re-scoring retrieved chunks.\n     Hybrid search combines dense retrieval with BM25 sparse retrieval for better recall.\n     Logging every retrieval and generation step is essential for debugging.",
+        "metadata": {
+          "doc_id": "doc8",
+          "title": "MLOps and RAG in Production",
+          "chunk_index": 0
+        },
+        "score": 0.1302315592765808,
+        "retrieval_latency_ms": 359.5418930053711
+      }
+    ],
+    "answer": " The context provided doesn't explicitly state how an agent controller selects tools, but it suggests that the selection can be either rule-based or LLM (Language Learning Model) driven. This implies that the choice of tools might depend on predefined rules or learned patterns from data (through machine learning). However, without specific information about the nature of these rules or learning mechanisms, I can't provide a more detailed answer.",
+    "latency": {
+      "retrieval_ms": 359.5418930053711,
+      "generation_s": 14.340007066726685,
+      "total_s": 14.699861288070679
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc5"
+    ]
+  },
+  {
+    "query": "What is Precision at K?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Retrieval evaluation uses Precision at K and Recall at K metrics.\n     Precision at K measures the fraction of top-K results that are relevant.\n     Recall at K measures the fraction of relevant documents retrieved in top-K.\n     Hallucination rate counts statements not supported by retrieved documents.\n     End-to-end latency equals retrieval latency plus generation latency.",
+        "metadata": {
+          "doc_id": "doc6",
+          "title": "Evaluation Metrics",
+          "chunk_index": 0
+        },
+        "score": 0.4705181419849396,
+        "retrieval_latency_ms": 1722.524881362915
+      },
+      {
+        "chunk": "Fixed-size chunking splits documents into equal-length segments with overlap.\n     Semantic chunking splits on sentence or paragraph boundaries.\n     Smaller chunks give more precise retrieval but lose context.\n     Larger chunks keep more context but may retrieve irrelevant content.\n     A chunk size of 512 with 10 percent overlap is a common starting point.",
+        "metadata": {
+          "doc_id": "doc3",
+          "title": "Chunking Strategies",
+          "chunk_index": 0
+        },
+        "score": 0.16645269095897675,
+        "retrieval_latency_ms": 1722.524881362915
+      },
+      {
+        "chunk": "FAISS is an open-source library for efficient similarity search over dense vectors.\n     It supports exact and approximate nearest-neighbor search.\n     Chroma is another open-source vector database that adds metadata filtering.\n     Both are widely used in RAG pipelines.\n     FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+        "metadata": {
+          "doc_id": "doc2",
+          "title": "Vector Databases",
+          "chunk_index": 0
+        },
+        "score": 0.1473623365163803,
+        "retrieval_latency_ms": 1722.524881362915
+      }
+    ],
+    "answer": " Precision at K measures the fraction of top-K results that are relevant.",
+    "latency": {
+      "retrieval_ms": 1722.524881362915,
+      "generation_s": 7.23649787902832,
+      "total_s": 8.961300134658813
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc6"
+    ]
+  },
+  {
+    "query": "How do I serve Mistral 7B locally?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Ollama is the easiest way to run open-weight LLMs locally on a Mac.\n     It supports Mistral, Llama, Qwen, and many other models.\n     vLLM is a high-throughput serving framework for cloud GPUs.\n     Hugging Face Transformers is the most flexible option but needs more setup.\n     For local development, Ollama with Mistral-7B is the recommended setup.",
+        "metadata": {
+          "doc_id": "doc7",
+          "title": "LLM Serving Methods",
+          "chunk_index": 0
+        },
+        "score": 0.24677874147891998,
+        "retrieval_latency_ms": 964.1947746276855
+      },
+      {
+        "chunk": "FAISS is an open-source library for efficient similarity search over dense vectors.\n     It supports exact and approximate nearest-neighbor search.\n     Chroma is another open-source vector database that adds metadata filtering.\n     Both are widely used in RAG pipelines.\n     FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+        "metadata": {
+          "doc_id": "doc2",
+          "title": "Vector Databases",
+          "chunk_index": 0
+        },
+        "score": 0.020708631724119186,
+        "retrieval_latency_ms": 964.1947746276855
+      },
+      {
+        "chunk": "Sentence transformers convert text into dense vector representations.\n     all-MiniLM-L6-v2 produces 384-dimensional embeddings and is fast and lightweight.\n     Embeddings capture semantic meaning, enabling similarity search beyond keyword matching.\n     Cosine similarity is used to rank retrieved documents by relevance.",
+        "metadata": {
+          "doc_id": "doc4",
+          "title": "Embedding Models",
+          "chunk_index": 0
+        },
+        "score": -0.0018915962427854538,
+        "retrieval_latency_ms": 964.1947746276855
+      }
+    ],
+    "answer": " To serve Mistral-7B locally, you would use Ollama as it's the recommended setup for local development with this model according to the provided context. However, the context doesn't provide specific instructions on how to set up Ollama with Mistral-7B. You may need to refer to Ollama's official documentation or seek guidance from resources that detail setting up Ollama for specific models.",
+    "latency": {
+      "retrieval_ms": 964.1947746276855,
+      "generation_s": 15.392400979995728,
+      "total_s": 16.357331037521362
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc7"
+    ]
+  },
+  {
+    "query": "Why is monitoring important in RAG systems?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.3384157717227936,
+        "retrieval_latency_ms": 427.3722171783447
+      },
+      {
+        "chunk": "Production RAG systems require monitoring of retrieval quality and latency.\n     Drift in document distribution can degrade retrieval performance over time.\n     Reranking models improve precision by re-scoring retrieved chunks.\n     Hybrid search combines dense retrieval with BM25 sparse retrieval for better recall.\n     Logging every retrieval and generation step is essential for debugging.",
+        "metadata": {
+          "doc_id": "doc8",
+          "title": "MLOps and RAG in Production",
+          "chunk_index": 0
+        },
+        "score": 0.3309374451637268,
+        "retrieval_latency_ms": 427.3722171783447
+      },
+      {
+        "chunk": "Retrieval evaluation uses Precision at K and Recall at K metrics.\n     Precision at K measures the fraction of top-K results that are relevant.\n     Recall at K measures the fraction of relevant documents retrieved in top-K.\n     Hallucination rate counts statements not supported by retrieved documents.\n     End-to-end latency equals retrieval latency plus generation latency.",
+        "metadata": {
+          "doc_id": "doc6",
+          "title": "Evaluation Metrics",
+          "chunk_index": 0
+        },
+        "score": 0.1635167896747589,
+        "retrieval_latency_ms": 427.3722171783447
+      }
+    ],
+    "answer": " Monitoring is important in Retrieval-Augmented Generation (RAG) systems because it allows for the evaluation of retrieval quality and latency. Over time, changes in document distribution can degrade retrieval performance, which necessitates monitoring to ensure optimal functioning. Additionally, monitoring helps identify instances of drift, enabling adjustments to be made accordingly. Furthermore, logging every retrieval and generation step is crucial for debugging purposes when issues arise.",
+    "latency": {
+      "retrieval_ms": 427.3722171783447,
+      "generation_s": 15.203980207443237,
+      "total_s": 15.632104873657227
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc8"
+    ]
+  },
+  {
+    "query": "What causes hallucination in language models?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.20652011036872864,
+        "retrieval_latency_ms": 2009.2079639434814
+      },
+      {
+        "chunk": "Sentence transformers convert text into dense vector representations.\n     all-MiniLM-L6-v2 produces 384-dimensional embeddings and is fast and lightweight.\n     Embeddings capture semantic meaning, enabling similarity search beyond keyword matching.\n     Cosine similarity is used to rank retrieved documents by relevance.",
+        "metadata": {
+          "doc_id": "doc4",
+          "title": "Embedding Models",
+          "chunk_index": 0
+        },
+        "score": 0.1867210566997528,
+        "retrieval_latency_ms": 2009.2079639434814
+      },
+      {
+        "chunk": "Retrieval evaluation uses Precision at K and Recall at K metrics.\n     Precision at K measures the fraction of top-K results that are relevant.\n     Recall at K measures the fraction of relevant documents retrieved in top-K.\n     Hallucination rate counts statements not supported by retrieved documents.\n     End-to-end latency equals retrieval latency plus generation latency.",
+        "metadata": {
+          "doc_id": "doc6",
+          "title": "Evaluation Metrics",
+          "chunk_index": 0
+        },
+        "score": 0.17034244537353516,
+        "retrieval_latency_ms": 2009.2079639434814
+      }
+    ],
+    "answer": " Hallucinations in language models occur when the model generates statements or facts that are not supported by the data it was trained on, or in the case of Retrieval-Augmented Generation (RAG), not grounded in the retrieved documents.",
+    "latency": {
+      "retrieval_ms": 2009.2079639434814,
+      "generation_s": 9.739428043365479,
+      "total_s": 11.749193906784058
+    },
+    "precision_at_3": 0.6666666666666666,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc1",
+      "doc6"
+    ]
+  },
+  {
+    "query": "What is BM25 hybrid search?",
+    "retrieved_chunks": [
+      {
+        "chunk": "Production RAG systems require monitoring of retrieval quality and latency.\n     Drift in document distribution can degrade retrieval performance over time.\n     Reranking models improve precision by re-scoring retrieved chunks.\n     Hybrid search combines dense retrieval with BM25 sparse retrieval for better recall.\n     Logging every retrieval and generation step is essential for debugging.",
+        "metadata": {
+          "doc_id": "doc8",
+          "title": "MLOps and RAG in Production",
+          "chunk_index": 0
+        },
+        "score": 0.46771785616874695,
+        "retrieval_latency_ms": 325.0148296356201
+      },
+      {
+        "chunk": "Retrieval-Augmented Generation (RAG) combines a retriever and a generator.\n     The retriever finds relevant documents from a vector store using semantic similarity.\n     The generator uses the retrieved context to produce grounded answers.\n     RAG reduces hallucinations because the model references real documents.\n     Key components are: chunker, embedder, vector index, retriever, and generator.",
+        "metadata": {
+          "doc_id": "doc1",
+          "title": "RAG Overview",
+          "chunk_index": 0
+        },
+        "score": 0.36954954266548157,
+        "retrieval_latency_ms": 325.0148296356201
+      },
+      {
+        "chunk": "FAISS is an open-source library for efficient similarity search over dense vectors.\n     It supports exact and approximate nearest-neighbor search.\n     Chroma is another open-source vector database that adds metadata filtering.\n     Both are widely used in RAG pipelines.\n     FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+        "metadata": {
+          "doc_id": "doc2",
+          "title": "Vector Databases",
+          "chunk_index": 0
+        },
+        "score": 0.2730035185813904,
+        "retrieval_latency_ms": 325.0148296356201
+      }
+    ],
+    "answer": " BM25 hybrid search refers to a method that combines dense retrieval with the traditional BM25 sparse retrieval approach. This technique aims to achieve better recall by leveraging the benefits of both methods. While the dense retrieval can capture complex semantic relationships, the BM25 sparse retrieval is efficient and effective for ranking documents based on their relevance to a query.",
+    "latency": {
+      "retrieval_ms": 325.0148296356201,
+      "generation_s": 13.80587387084961,
+      "total_s": 14.131171941757202
+    },
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "relevant_docs": [
+      "doc8"
+    ]
+  }
+]

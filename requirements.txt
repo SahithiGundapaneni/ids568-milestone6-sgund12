@@ -1,0 +1,7 @@
+faiss-cpu==1.7.4
+sentence-transformers==2.7.0
+ollama==0.6.1
+numpy==2.0.2
+pandas==2.3.3
+notebook==7.5.5
+ipykernel==6.31.0
