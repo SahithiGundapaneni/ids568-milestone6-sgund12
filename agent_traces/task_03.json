@@ -5,40 +5,105 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "Explain chunking strategies and which is best for small corpora.",
-      "reasoning": "",
+      "input": "chunking strategies and best for small corpora in RAG systems",
+      "reasoning": "To find the information about chunking strategies and their suitability for small corpora in Retrieval-Augmented Generation (RAG) systems.",
       "result": {
         "tool": "retriever",
-        "query": "Explain chunking strategies and which is best for small corpora.",
+        "query": "chunking strategies and best for small corpora in RAG systems",
         "results": [
           {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9397492408752441
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.08404484391212463
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9289379119873047
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.053026217967271805
           },
           {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9289379119873047
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.05301710218191147
           }
         ]
       }
     },
     {
       "step": 2,
+      "action": "retrieve",
+      "input": [
+        "chunking strategies in RAG systems",
+        "best chunking strategy for small corpora"
+      ],
+      "reasoning": "To gather information about chunking strategies and the best one for small corpora in RAG systems.",
+      "result": {
+        "tool": "retriever",
+        "query": "chunking strategies in RAG systems best chunking strategy for small corpora",
+        "results": [
+          {
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.08421090245246887
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.03549538180232048
+          },
+          {
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.029248744249343872
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve",
+      "input": "Chunking strategies for RAG systems and their performance in small corpora",
+      "reasoning": "To find the details about chunking strategies in RAG systems and their effectiveness in small corpora",
+      "result": {
+        "tool": "retriever",
+        "query": "Chunking strategies for RAG systems and their performance in small corpora",
+        "results": [
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.5337461233139038
+          },
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.4992780387401581
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.3590943217277527
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "summarize",
+      "input": "Retrieved information on chunking strategies in the context of RAG systems and FAISS. Chunking is a technique used to break down the retrieved documents into smaller, more manageable pieces (chunks) before being input into the language model for generation. This improves efficiency by allowing the model to process fewer tokens and focus on specific aspects of the text. There are different chunking strategies like sliding window, sentence-based, and passage-based. For small corpora, sentence-based chunking is often preferred due to its simplicity and efficiency.",
+      "reasoning": "Summarized the retrieved information about chunking strategies in RAG systems for a clearer explanation.",
+      "result": {
+        "tool": "summarizer",
+        "summary": " Chunking strategies in RAG systems and FAISS involve breaking down retrieved documents into smaller pieces (chunks) for more efficient processing by language models, allowing the model to focus on specific aspects of the text. Strategies include sliding window, sentence-based, and passage-based, with sentence-based being particularly useful for small corpora."
+      }
+    },
+    {
+      "step": 5,
       "action": "answer",
-      "input": {
-        "search_query": "explain chunking strategies and which is best for small corpora"
-      },
+      "input": "Explain chunking strategies and which is best for small corpora.",
       "reasoning": "",
-      "result": " Chunking strategies are techniques used in information retrieval to break down a large corpus (a collection of text documents) into smaller, manageable pieces or chunks. This process helps to improve the efficiency and effectiveness of search queries by allowing systems to focus on specific parts of the data.\n\nThere are several chunking strategies:\n\n1. Document Chunking: This strategy breaks down a corpus into individual documents. It's useful when the goal is to find information within specific documents rather than across multiple ones.\n\n2. Passage Retrieval (PR): Also known as \"sentence ranking\", PR focuses on retrieving short passages or sentences that are most likely to contain the desired information, instead of entire documents.\n\n3. Dense Passage Retrieval (DPR): An extension of passage retrieval, DPR involves training a dense vector model that can represent whole documents and their sub-passages as single vectors in a high-dimensional space, facilitating efficient search.\n\n4. Hybrid Search: This strategy combines both sparse and dense retrieval methods to improve the precision of search results. It utilizes BM25 (a classic information retrieval model) for sparse retrieval and dense retrieval models like DPR for more accurate results.\n\nFor small corpora, Passage Retrieval or Hybrid Search might be more suitable due to their ability to focus on specific pieces of text and provide more precise results with less data. However, the optimal chunking strategy can also depend on factors such as the nature of the information being sought, the complexity of the corpus, and the requirements of the specific application."
+      "result": " In Retrieval-Augmented Generation (RAG) systems, chunking strategies are employed to break down retrieved documents into smaller pieces, or chunks, for more efficient processing by language models. This allows the model to focus on specific aspects of the text, improving performance.\n\nFor small corpora, sentence-based chunking seems to be particularly useful due to its ability to capture the context of individual sentences effectively. However, it's important to note that different strategies might work best depending on the specific task and data at hand.\n\nIn RAG systems using FAISS (Facebook AI Similarity Search), the commonly used chunking strategy is all-MiniLM-L6-v2 which converts text into 384-dimensional dense vectors, and cosine similarity is used to rank retrieved documents by relevance."
     }
   ],
-  "final_answer": " Chunking strategies are techniques used in information retrieval to break down a large corpus (a collection of text documents) into smaller, manageable pieces or chunks. This process helps to improve the efficiency and effectiveness of search queries by allowing systems to focus on specific parts of the data.\n\nThere are several chunking strategies:\n\n1. Document Chunking: This strategy breaks down a corpus into individual documents. It's useful when the goal is to find information within specific documents rather than across multiple ones.\n\n2. Passage Retrieval (PR): Also known as \"sentence ranking\", PR focuses on retrieving short passages or sentences that are most likely to contain the desired information, instead of entire documents.\n\n3. Dense Passage Retrieval (DPR): An extension of passage retrieval, DPR involves training a dense vector model that can represent whole documents and their sub-passages as single vectors in a high-dimensional space, facilitating efficient search.\n\n4. Hybrid Search: This strategy combines both sparse and dense retrieval methods to improve the precision of search results. It utilizes BM25 (a classic information retrieval model) for sparse retrieval and dense retrieval models like DPR for more accurate results.\n\nFor small corpora, Passage Retrieval or Hybrid Search might be more suitable due to their ability to focus on specific pieces of text and provide more precise results with less data. However, the optimal chunking strategy can also depend on factors such as the nature of the information being sought, the complexity of the corpus, and the requirements of the specific application.",
+  "final_answer": " In Retrieval-Augmented Generation (RAG) systems, chunking strategies are employed to break down retrieved documents into smaller pieces, or chunks, for more efficient processing by language models. This allows the model to focus on specific aspects of the text, improving performance.\n\nFor small corpora, sentence-based chunking seems to be particularly useful due to its ability to capture the context of individual sentences effectively. However, it's important to note that different strategies might work best depending on the specific task and data at hand.\n\nIn RAG systems using FAISS (Facebook AI Similarity Search), the commonly used chunking strategy is all-MiniLM-L6-v2 which converts text into 384-dimensional dense vectors, and cosine similarity is used to rank retrieved documents by relevance.",
   "success": true
 }

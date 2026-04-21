@@ -33,6 +33,11 @@ retrieve, summarize, or answer. All decisions are logged to agent_traces/.
 Success rate: 10/10
 
 ## Failure Analysis
+- Task 1 hallucination: The agent incorrectly interpreted "RAG" as a medical 
+  term rather than Retrieval-Augmented Generation. This occurred because 
+  Mistral-7B fell back on parametric knowledge when the retrieved context 
+  did not explicitly define the RAG acronym. Fix: add explicit context 
+  definition in the system prompt.
 - JSON parse errors: LLM occasionally wrapped JSON in markdown fences.
   Fixed with strip-fence fallback before parsing.
 - Task 10 required 4 steps because failure modes span multiple documents.

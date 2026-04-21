@@ -5,45 +5,98 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline",
-      "reasoning": "",
+      "input": "evaluation metrics for RAG pipelines",
+      "reasoning": "To identify the appropriate evaluation metrics for a Retrieval-Augmented Generation (RAG) pipeline, we need to understand the key components of such a system and how they can be assessed.",
       "result": {
         "tool": "retriever",
-        "query": "Evaluation metrics for a RAG (Red, Amber, Green) pipeline",
+        "query": "evaluation metrics for RAG pipelines",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.6297656297683716
+            "score": 0.4161365032196045
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.6221888661384583
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.26699599623680115
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.6221888661384583
+            "score": 0.16345949470996857
           }
         ]
       }
     },
     {
       "step": 2,
-      "action": "summarize",
-      "input": {
-        "RAG": "Ranking, Agreement, and Grading",
-        "pipeline": "a sequence of tasks in NLP (Natural Language Processing) that involve Ranking the relevance of documents, Agreement among annotators about labels, and Grading the quality of summaries"
-      },
-      "reasoning": "Evaluation metrics for a RAG pipeline are specific to each task. For the Ranking task, common metrics include Mean Reciprocal Rank (MRR), Normalized Discounted Cumulative Gain (nDCG), and Precision at K (P@k). Agreement among annotators can be measured using Cohen's kappa coefficient or Fleiss' kappa. For Grading, metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) are commonly used.",
+      "action": "retrieve",
+      "input": [
+        "Evaluation metrics for a RAG pipeline"
+      ],
+      "reasoning": "To find information about evaluation metrics specific to Retrieval-Augmented Generation (RAG) pipelines.",
       "result": {
-        "tool": "summarizer",
-        "summary": " The RAG pipeline in Natural Language Processing (NLP) is a series of tasks aimed at ranking relevant documents, ensuring agreement among annotators on label assignments, and grading the quality of generated summaries. It's designed to improve the overall efficiency and accuracy of various NLP applications."
+        "tool": "retriever",
+        "query": "Evaluation metrics for a RAG pipeline",
+        "results": [
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.41256603598594666
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.26501017808914185
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.1562114804983139
+          }
+        ]
       }
     },
     {
       "step": 3,
+      "action": "retrieve",
+      "input": "evaluation metrics for a RAG pipeline",
+      "reasoning": "To find the evaluation metrics used in a Retrieval-Augmented Generation (RAG) pipeline.",
+      "result": {
+        "tool": "retriever",
+        "query": "evaluation metrics for a RAG pipeline",
+        "results": [
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.41256603598594666
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.26501017808914185
+          },
+          {
+            "title": "Chunking Strategies",
+            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
+            "score": 0.1562114804983139
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "summarize",
+      "input": "Evaluation metrics for a Retrieval-Augmented Generation (RAG) pipeline are essential to ensure the system's effectiveness and accuracy. Commonly used evaluation metrics include Exact Match, F1 Score, BLEU Score, ROUGE Score, and perplexity. Exact Match measures the proportion of retrieved answers that exactly match the ground truth. F1 Score is a harmonic mean of precision and recall. BLEU Score calculates the n-gram overlap between the generated response and the reference answer. ROUGE Score evaluates the quality of summaries by comparing them with human-written references. Perplexity is used to measure how well a language model predicts a sample.",
+      "reasoning": "Summarized the key evaluation metrics for a RAG pipeline, which are essential for assessing the system's effectiveness and accuracy.",
+      "result": {
+        "tool": "summarizer",
+        "summary": " Evaluation metrics are crucial for a Retrieval-Augmented Generation (RAG) pipeline to assess its effectiveness and accuracy. Common metrics include Exact Match, F1 Score, BLEU Score, ROUGE Score, and perplexity. Exact Match measures the proportion of retrieved answers that precisely match the ground truth, while F1 Score is a combination of precision and recall. BLEU Score calculates the n-gram overlap between the generated response and the reference answer, and ROUGE Score determines the similarity between systems' outputs and references by evaluating overlapping n-grams and their lengths. Perplexity measures the model's ability to generate likely responses compared to random guesses."
+      }
+    },
+    {
+      "step": 5,
       "action": "retrieve",
       "input": "Describe evaluation metrics for a RAG pipeline.",
       "reasoning": "JSON fallback",
@@ -54,29 +107,22 @@
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.3629050850868225
+            "score": 0.4210025668144226
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.3573859632015228
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.2998220920562744
           },
           {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.3573859632015228
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.16909316182136536
           }
         ]
       }
-    },
-    {
-      "step": 4,
-      "action": "answer",
-      "input": "Describe evaluation metrics for a RAG pipeline.",
-      "reasoning": "",
-      "result": " The evaluation metrics for a RAG pipeline in Natural Language Processing (NLP) can be categorized into three main areas: Retrieval, Agreement, and Grading.\n\n1. **Retrieval Evaluation**: Measures the effectiveness of document retrieval. Common metrics include Recall, Precision, F1-score, and Normalized Discounted Cumulative Gain (NDCG). In a RAG pipeline, retrieval quality and latency are crucial for ensuring efficient and accurate information retrieval.\n\n2. **Agreement Evaluation**: Assesses the consistency among annotators or models in labeling documents. Measures like Cohen's kappa, Scott's pi, and Fleiss' kappa can be used to evaluate inter-annotator agreement (IAA) or inter-rater reliability. High IAA indicates better agreement among annotators.\n\n3. **Grading Evaluation**: Estimates the quality of generated summaries by comparing them with human-written summaries. Automatic metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual Evaluation Understudy) are commonly used to compare the quality and fluency of machine-generated summaries with human-written summaries.\n\nIn addition, it's essential to log every step in a production RAG pipeline for debugging purposes and to monitor system performance."
     }
   ],
-  "final_answer": " The evaluation metrics for a RAG pipeline in Natural Language Processing (NLP) can be categorized into three main areas: Retrieval, Agreement, and Grading.\n\n1. **Retrieval Evaluation**: Measures the effectiveness of document retrieval. Common metrics include Recall, Precision, F1-score, and Normalized Discounted Cumulative Gain (NDCG). In a RAG pipeline, retrieval quality and latency are crucial for ensuring efficient and accurate information retrieval.\n\n2. **Agreement Evaluation**: Assesses the consistency among annotators or models in labeling documents. Measures like Cohen's kappa, Scott's pi, and Fleiss' kappa can be used to evaluate inter-annotator agreement (IAA) or inter-rater reliability. High IAA indicates better agreement among annotators.\n\n3. **Grading Evaluation**: Estimates the quality of generated summaries by comparing them with human-written summaries. Automatic metrics like ROUGE (Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual Evaluation Understudy) are commonly used to compare the quality and fluency of machine-generated summaries with human-written summaries.\n\nIn addition, it's essential to log every step in a production RAG pipeline for debugging purposes and to monitor system performance.",
-  "success": true
+  "final_answer": " Evaluation metrics play a vital role in assessing the performance of a Retrieval-Augmented Generation (RAG) pipeline. Common evaluation metrics for RAG pipelines include Exact Match, F1 Score, BLEU Score, ROUGE Score, and perplexity.\n\nExact Match is used to measure the proportion of retrieved answers that precisely match the ground truth. A higher exact match score indicates a better performance.\n\nF1 Score is a combination of precision (the ratio of correctly retrieved answers to all retrieved answers) and recall (the ratio of correctly retrieved answers to all actual answers). F1 Score ranges between 0 and 1, with a higher score indicating better performance.\n\nBLEU (Bilingual Evaluation Understudy) Score measures the similarity between the generated response and a set of reference responses, taking into account length penalty and brevity penalty to penalize overly long or excessively short outputs. A higher BLEU score indicates better performance.\n\nROUGE (Recall-Oriented Understudy for Gisting Evaluation) Score measures the overlap between generated and reference texts at various levels of granularity, such as unigram, bigram, and four-gram matches. Higher ROUGE scores indicate greater similarity with the reference responses.\n\nPerplexity is a measure of how well the model predicts the input data, with lower perplexity indicating better performance. In the context of RAG pipelines, it can be used to evaluate the quality of the generated answers.\n\nIn addition to these evaluation metrics, monitoring retrieval quality and latency in production environments is essential for debugging and improving the system's overall performance.",
+  "success": false
 }

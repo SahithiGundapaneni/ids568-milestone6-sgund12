@@ -6,25 +6,25 @@
       "step": 1,
       "action": "retrieve",
       "input": "lightweight embedding models for RAG systems",
-      "reasoning": "",
+      "reasoning": "To find a suitable lightweight embedding model for a Retrieval-Augmented Generation (RAG) system, we are searching the knowledge base for specific information about such models.",
       "result": {
         "tool": "retriever",
         "query": "lightweight embedding models for RAG systems",
         "results": [
           {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.3768596649169922
+          },
+          {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.8859620094299316
+            "score": 0.37094545364379883
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.8737176656723022
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.8737176656723022
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.264991819858551
           }
         ]
       }
@@ -32,26 +32,26 @@
     {
       "step": 2,
       "action": "retrieve",
-      "input": "Lightweight embedding models for RAG (ReasoNing Agents) systems",
-      "reasoning": "",
+      "input": "Embedding model for lightweight RAG system",
+      "reasoning": "To find the best embedding model for a lightweight Retrieval-Augmented Generation (RAG) system, we should look for models that balance efficiency and quality. Due to their small size and fast computation, Models like BERT-mini, MobileBERT, or DistilBERT could be suitable options.",
       "result": {
         "tool": "retriever",
-        "query": "Lightweight embedding models for RAG (ReasoNing Agents) systems",
+        "query": "Embedding model for lightweight RAG system",
         "results": [
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9311083555221558
+            "score": 0.3815685212612152
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.919883668422699
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.34270864725112915
           },
           {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.919883668422699
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.20348507165908813
           }
         ]
       }
@@ -59,26 +59,26 @@
     {
       "step": 3,
       "action": "retrieve",
-      "input": "Lightweight embedding models for RAG systems",
-      "reasoning": "",
+      "input": "lightweight embedding models for RAG systems",
+      "reasoning": "To find suitable lightweight embedding models for a Retrieval-Augmented Generation (RAG) system.",
       "result": {
         "tool": "retriever",
-        "query": "Lightweight embedding models for RAG systems",
+        "query": "lightweight embedding models for RAG systems",
         "results": [
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.3768596649169922
+          },
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.8859620094299316
+            "score": 0.37094545364379883
           },
           {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.8737176656723022
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.8737176656723022
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.264991819858551
           }
         ]
       }
@@ -86,21 +86,41 @@
     {
       "step": 4,
       "action": "summarize",
-      "input": "Lightweight RAG (Read-Ask-Generate) system requires an embedding model that is efficient and compact. One suitable option could be BERT-mini or MobileBERT, which are lighter versions of the well-known BERT model. These models have been designed to work on resource-limited devices.",
+      "input": "Retrieved information about lightweight embedding models for RAG systems. One of the mentioned models is Sentence-BERT (SentBERT), a BERT-based model that creates sentence embeddings which are useful in semantic text matching tasks like those performed by RAG systems.",
       "reasoning": "",
       "result": {
         "tool": "summarizer",
-        "summary": " The Lightweight RAG (Read-Ask-Generate) system utilizes compact and efficient embedding models like BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. Designed for resource-limited devices, these lightweight models enable efficient language understanding and generation tasks."
+        "summary": " The discussion revolves around lightweight embedding models suitable for RAG (Repeatedly-Asked Questions) systems. One such model is Sentence-BERT (SentBERT), a BERT-based model that generates sentence embeddings. These embeddings are beneficial in semantic text matching tasks, such as those typically performed by RAG systems."
       }
     },
     {
       "step": 5,
-      "action": "answer",
-      "input": "What embedding model suits a lightweight RAG system?",
-      "reasoning": "",
-      "result": " The Lightweight RAG (Read-Ask-Generate) system would benefit from using compact and efficient embedding models such as BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. These lightweight models are designed for resource-limited devices, enabling efficient language understanding and generation tasks in the RAG system."
+      "action": "retrieve",
+      "input": "lightweight embedding models for RAG systems",
+      "reasoning": "Find suitable lightweight embeddings for a Retrieval-Augmented Generation (RAG) system.",
+      "result": {
+        "tool": "retriever",
+        "query": "lightweight embedding models for RAG systems",
+        "results": [
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.3768596649169922
+          },
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.37094545364379883
+          },
+          {
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.264991819858551
+          }
+        ]
+      }
     }
   ],
-  "final_answer": " The Lightweight RAG (Read-Ask-Generate) system would benefit from using compact and efficient embedding models such as BERT-mini and MobileBERT, which are optimized versions of the renowned BERT model. These lightweight models are designed for resource-limited devices, enabling efficient language understanding and generation tasks in the RAG system.",
-  "success": true
+  "final_answer": " Based on the information provided, Sentence-BERT (SentBERT) seems to be a suitable lightweight embedding model for a RAG (Repeatedly-Asked Questions) system. This is due to its ability to generate sentence embeddings that are beneficial in semantic text matching tasks, which aligns well with the typical operations performed by RAG systems.",
+  "success": false
 }

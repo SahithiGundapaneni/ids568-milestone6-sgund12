@@ -51,7 +51,12 @@ print(f"Index ready — {index.ntotal} docs")
 
 # ── Tool 1: Retriever ─────────────────────────────────────────────
 def tool_retrieve(query):
-    q_vec = embedder.encode([query], convert_to_numpy=True)
+    if isinstance(query, list):
+        query = " ".join(query)
+    if not query or len(str(query).strip()) == 0:
+        query = "RAG retrieval augmented generation"
+    query = str(query).strip()
+    q_vec = embedder.encode([query], convert_to_numpy=True, batch_size=1)
     faiss.normalize_L2(q_vec)
     scores, indices = index.search(q_vec, TOP_K)
     return {
@@ -64,14 +69,14 @@ def tool_retrieve(query):
             for j, idx in enumerate(indices[0])
         ]
     }
-
-
 # ── Tool 2: Summarizer ────────────────────────────────────────────
 def tool_summarize(text):
+    if not text or len(text.strip()) == 0:
+        text = "No content provided"
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user",
-                   "content": f"Summarize in 2-3 sentences:\n\n{text}"}]
+                   "content": f"Summarize in 2-3 sentences:\n\n{text[:500]}"}]
     )
     return {"tool": "summarizer", "summary": response["message"]["content"]}
 
@@ -86,18 +91,20 @@ def agent_decide(task, history):
         for i, h in enumerate(history)
     ]) or "None yet."
 
-    prompt = f"""You are an AI agent. Choose the next action.
+    prompt = f"""You are an AI agent helping answer questions about RAG (Retrieval-Augmented Generation) systems, vector databases, embeddings, and MLOps.
 
-Tools available:
-- retrieve: search knowledge base for facts
-- summarize: condense a long passage
-- answer: you have enough info, write the final answer
+IMPORTANT: In this context, RAG always means Retrieval-Augmented Generation — a technique combining document retrieval with language model generation to produce grounded answers.
+
+Available tools:
+- retrieve: search the knowledge base for facts about RAG, embeddings, FAISS, agents, chunking
+- summarize: condense a long retrieved passage into key points
+- answer: you have enough information to write the final answer now
 
 Task: {task}
 Steps so far: {history_str}
 
-Reply in JSON only, no extra text:
-{{"action": "retrieve", "input": "what to search", "reasoning": "why"}}"""
+Reply in JSON only, no markdown, no extra text:
+{{"action": "retrieve", "input": "specific search query", "reasoning": "brief reason"}}"""
 
     response = ollama.chat(model=LLM_MODEL,
                            messages=[{"role": "user", "content": prompt}])

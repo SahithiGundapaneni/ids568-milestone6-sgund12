@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "agent controller decision making process",
-      "reasoning": "Understanding how an agent controller decides which tool to use requires knowledge about its decision-making process.",
+      "input": "decision-making process for agent controller",
+      "reasoning": "to understand the decision-making process of an agent controller in a RAG system.",
       "result": {
         "tool": "retriever",
-        "query": "agent controller decision making process",
+        "query": "decision-making process for agent controller",
         "results": [
-          {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.8525538444519043
-          },
           {
             "title": "Agent Controllers",
             "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.8398695588111877
+            "score": 0.6297372579574585
           },
           {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.8398695588111877
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.058044858276844025
+          },
+          {
+            "title": "LLM Serving Methods",
+            "text": "Ollama is the easiest way to run open-weight LLMs locally. It supports Mistral, Llama, Qwen and others. vLLM is better for cloud GPUs. Ollama with Mistral-7B is recommended for local development.",
+            "score": 0.03549973666667938
           }
         ]
       }
@@ -32,11 +32,11 @@
     {
       "step": 2,
       "action": "summarize",
-      "input": "The agent controller decides which tool to use based on the nature of the task. If it needs to search for facts, it uses 'retrieve'. The reason behind this is to find the necessary information required to answer or perform a specific action.",
-      "reasoning": "",
+      "input": "The specific search query should be about the decision-making process of an agent controller in a RAG system. It should include factors such as the complexity of the question, the availability of relevant information in the knowledge base, and the performance metrics of different tools (retrieve, summarize, answer) to determine which tool would provide the most efficient solution.",
+      "reasoning": "To get the specific details about the decision-making process, it is necessary to first retrieve detailed information on how an agent controller decides which tool to use in a RAG system. The summarized passage will condense this information for easier understanding.",
       "result": {
         "tool": "summarizer",
-        "summary": " The agent controller selects appropriate tools according to the task at hand, utilizing 'retrieve' when needed for fact-finding missions, as this tool helps in gathering essential information to respond accurately or execute specific actions."
+        "summary": " The query discusses the decision-making process of an agent controller in a RAG (Red-Amber-Green) system, where the controller chooses the optimal tool for answering a question based on factors such as the complexity of the question, the availability and relevance of information in the knowledge base, and the performance metrics of different tools like retrieve, summarize, and answer. The goal is to determine which tool would offer the most efficient solution."
       }
     },
     {
@@ -44,9 +44,9 @@
       "action": "answer",
       "input": "How does an agent controller decide which tool to use?",
       "reasoning": "",
-      "result": " The agent controller decides which tool to use based on the nature of the task at hand. For fact-finding missions or when it needs to gather essential information to respond accurately or execute specific actions, it utilizes the 'retrieve' tool. This is because the 'retrieve' tool helps in gathering necessary data effectively."
+      "result": " The agent controller decides which tool to use based on a decision-making process that can be either rule-based or driven by a Learning Language Model (LLM). In a multi-step task, the agent controller orchestrates multiple tools. When selecting a tool, factors such as the complexity of the question, the availability and relevance of information in the knowledge base, and the performance metrics of different tools like retrieve are considered. This process is crucial for debugging and efficient task completion within a RAG (Red-Amber-Green) system."
     }
   ],
-  "final_answer": " The agent controller decides which tool to use based on the nature of the task at hand. For fact-finding missions or when it needs to gather essential information to respond accurately or execute specific actions, it utilizes the 'retrieve' tool. This is because the 'retrieve' tool helps in gathering necessary data effectively.",
+  "final_answer": " The agent controller decides which tool to use based on a decision-making process that can be either rule-based or driven by a Learning Language Model (LLM). In a multi-step task, the agent controller orchestrates multiple tools. When selecting a tool, factors such as the complexity of the question, the availability and relevance of information in the knowledge base, and the performance metrics of different tools like retrieve are considered. This process is crucial for debugging and efficient task completion within a RAG (Red-Amber-Green) system.",
   "success": true
 }

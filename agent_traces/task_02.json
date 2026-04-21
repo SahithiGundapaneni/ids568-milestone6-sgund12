@@ -5,26 +5,26 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "Compare FAISS and Chroma for vector storage",
-      "reasoning": "",
+      "input": "Compare FAISS and Chroma for vector storage in RAG systems.",
+      "reasoning": "To understand the differences between FAISS and Chroma, both being popular vector databases for RAG systems.",
       "result": {
         "tool": "retriever",
-        "query": "Compare FAISS and Chroma for vector storage",
+        "query": "Compare FAISS and Chroma for vector storage in RAG systems.",
         "results": [
+          {
+            "title": "Agent Controllers",
+            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
+            "score": 0.09752528369426727
+          },
           {
             "title": "Vector Databases",
             "text": "FAISS is an open-source library for efficient similarity search. Chroma adds metadata filtering and persistence. FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
-            "score": 0.025102846324443817
+            "score": 0.09444362670183182
           },
           {
-            "title": "Embedding Models",
-            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
-            "score": 0.025045108050107956
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.024682918563485146
+            "title": "LLM Serving Methods",
+            "text": "Ollama is the easiest way to run open-weight LLMs locally. It supports Mistral, Llama, Qwen and others. vLLM is better for cloud GPUs. Ollama with Mistral-7B is recommended for local development.",
+            "score": 0.057531774044036865
           }
         ]
       }
@@ -33,88 +33,96 @@
       "step": 2,
       "action": "retrieve",
       "input": [
-        "Compare FAISS and Chroma for vector storage",
-        "FAISS features and advantages",
-        "Chroma features and advantages"
+        "Compare FAISS and Chroma for vector storage in the context of RAG systems."
       ],
-      "reasoning": "To provide a comparison between FAISS and Chroma, we need to understand their respective features and advantages.",
+      "reasoning": "To provide a comparison between two popular vector databases, FAISS and Chroma, as they relate to Retrieval-Augmented Generation (RAG) systems.",
       "result": {
         "tool": "retriever",
-        "query": [
-          "Compare FAISS and Chroma for vector storage",
-          "FAISS features and advantages",
-          "Chroma features and advantages"
-        ],
+        "query": "Compare FAISS and Chroma for vector storage in the context of RAG systems.",
         "results": [
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.4012019634246826
+          },
+          {
+            "title": "Vector Databases",
+            "text": "FAISS is an open-source library for efficient similarity search. Chroma adds metadata filtering and persistence. FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+            "score": 0.3914537727832794
+          },
           {
             "title": "MLOps and RAG in Production",
             "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9144350290298462
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9043434858322144
-          },
-          {
-            "title": "Chunking Strategies",
-            "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9043434858322144
+            "score": 0.3681133985519409
           }
         ]
       }
     },
     {
       "step": 3,
-      "action": "summarize",
-      "input": "Comparison of FAISS and Chroma for vector storage:\nFAISS (Facebook AI Similarity Search) is a library developed by Facebook Research for efficient similarity search and clustering of dense vectors. It supports various indexing methods such as IVF (Inverted File), HNSW (Hierarchical Navigable Small World), and FAISS-indexes (Flat, Randomized KD-tree).\nChroma is a simple, fast, and easy-to-use library for large-scale similarity search on top of Sparse and Dense matrices. Chroma's index supports approximate nearest neighbor search using HNSW and FAISS's IVF and FAISS-indexes are used for indexing in Chroma.\nKey differences between FAISS and Chroma:\n1. Usage: FAISS is mainly used for similarity search, clustering, and dimensionality reduction, while Chroma is primarily focused on approximate nearest neighbor search.\n2. Efficiency: Both tools are efficient but may perform differently based on the specific use case and data.\n3. Complexity: FAISS has more complex configuration options compared to Chroma.\n4. Support: FAISS has a broader community support since it's developed by Facebook Research, while Chroma is developed by RocketAI.",
-      "reasoning": "",
-      "result": {
-        "tool": "summarizer",
-        "summary": " FAISS (Facebook AI Similarity Search) and Chroma are libraries designed for efficient vector storage and similarity search. While FAISS supports various indexing methods including IVF, HNSW, and its own FAISS-indexes for diverse applications like similarity search, clustering, and dimensionality reduction, Chroma is primarily focused on approximate nearest neighbor search, utilizing HNSW, IVF, and FAISS's FAISS-indexes. The main differences between the two lie in their primary focus (FAISS for broader applications and Chroma for approximate nearest neighbors), efficiency (which may vary based on specific use cases and data), complexity (FAISS offers more configuration options), and support (FAISS enjoys broader community support due to its association with Facebook Research, while Chroma is developed by RocketAI)."
-      }
-    },
-    {
-      "step": 4,
       "action": "retrieve",
-      "input": [
-        "Comparison between FAISS and Chroma for vector storage",
-        "FAISS vs Chroma comparison"
-      ],
-      "reasoning": "To provide a summary of the differences and similarities between FAISS and Chroma in terms of vector storage.",
+      "input": "Compare FAISS and Chroma for vector storage",
+      "reasoning": "To compare the two vector database systems, FAISS and Chroma, in terms of vector storage.",
       "result": {
         "tool": "retriever",
-        "query": [
-          "Comparison between FAISS and Chroma for vector storage",
-          "FAISS vs Chroma comparison"
-        ],
+        "query": "Compare FAISS and Chroma for vector storage",
         "results": [
           {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9234257936477661
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9139461517333984
+            "title": "Vector Databases",
+            "text": "FAISS is an open-source library for efficient similarity search. Chroma adds metadata filtering and persistence. FAISS is faster for pure retrieval; Chroma is easier for filtered search.",
+            "score": 0.6164681315422058
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9139461517333984
+            "score": 0.2637881934642792
+          },
+          {
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.26001834869384766
           }
         ]
       }
     },
     {
-      "step": 5,
-      "action": "answer",
-      "input": "Compare FAISS and Chroma for vector storage.",
+      "step": 4,
+      "action": "summarize",
+      "input": "Comparison between FAISS and Chroma for vector storage in the context of RAG systems.",
       "reasoning": "",
-      "result": " Comparing FAISS and Chroma for vector storage, FAISS is an open-source library for efficient similarity search that supports various indexing methods like IVF, HNSW, and its own FAISS-indexes. It's particularly useful for diverse applications such as similarity search, clustering, and dimensionality reduction. On the other hand, Chroma is primarily focused on approximate nearest neighbor search with additional features for metadata filtering and persistence in a distributed environment. While FAISS is faster for pure retrieval, Chroma might be easier for filtered searches, especially in production settings where monitoring retrieval quality and latency is crucial. Both libraries can be integrated into MLOps and RAG systems for efficient vector storage and search operations."
+      "result": {
+        "tool": "summarizer",
+        "summary": " Both FAISS and Chroma are efficient approaches for storing vectors in the context of Recommender Systems (RAG systems). FAISS, short for Face Analysis Using Scale-invariant Feature Transform, is a library optimized for similarity search and nearest neighbor search in large datasets, making it suitable for recommendation tasks. Chroma, on the other hand, is a library specifically designed for RAG systems that uses dense vector representation and cache-efficient algorithms to efficiently perform operations required for recommendation tasks. While both can be effective, Chroma may offer more optimization tailored directly to RAG systems compared to FAISS."
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve",
+      "input": "Comparison between FAISS and Chroma for vector storage",
+      "reasoning": "To get detailed information about the differences and similarities between FAISS and Chroma, focusing on their capabilities and performance when used as vector databases in RAG systems.",
+      "result": {
+        "tool": "retriever",
+        "query": "Comparison between FAISS and Chroma for vector storage",
+        "results": [
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.10946576297283173
+          },
+          {
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.08494434505701065
+          },
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.0847846120595932
+          }
+        ]
+      }
     }
   ],
-  "final_answer": " Comparing FAISS and Chroma for vector storage, FAISS is an open-source library for efficient similarity search that supports various indexing methods like IVF, HNSW, and its own FAISS-indexes. It's particularly useful for diverse applications such as similarity search, clustering, and dimensionality reduction. On the other hand, Chroma is primarily focused on approximate nearest neighbor search with additional features for metadata filtering and persistence in a distributed environment. While FAISS is faster for pure retrieval, Chroma might be easier for filtered searches, especially in production settings where monitoring retrieval quality and latency is crucial. Both libraries can be integrated into MLOps and RAG systems for efficient vector storage and search operations.",
-  "success": true
+  "final_answer": " FAISS and Chroma are both efficient approaches for storing vectors, particularly in the context of Recommender Systems (RAG systems).\n\nFAISS, an acronym for Face Analysis Using Scale-invariant Feature Transform, is optimized for similarity search and nearest neighbor search in large datasets. This makes it suitable for recommendation tasks due to its efficiency.\n\nChroma, on the other hand, is a library that adds metadata filtering and persistence to vector databases. While FAISS may be faster for pure retrieval, Chroma offers easier functionality for filtered searches.\n\nIn summary, while FAISS excels in efficiency for similarity search, Chroma provides a more user-friendly solution for filtered searches in the context of RAG systems.",
+  "success": false
 }

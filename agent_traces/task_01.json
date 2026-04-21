@@ -5,75 +5,104 @@
     {
       "step": 1,
       "action": "retrieve",
-      "input": "RAG in psychiatry and its relation to reducing hallucinations",
-      "reasoning": "",
+      "input": "What is RAG and why does it reduce hallucinations?",
+      "reasoning": "JSON fallback",
       "result": {
         "tool": "retriever",
-        "query": "RAG in psychiatry and its relation to reducing hallucinations",
+        "query": "What is RAG and why does it reduce hallucinations?",
         "results": [
           {
-            "title": "LLM Serving Methods",
-            "text": "Ollama is the easiest way to run open-weight LLMs locally. It supports Mistral, Llama, Qwen and others. vLLM is better for cloud GPUs. Ollama with Mistral-7B is recommended for local development.",
-            "score": 0.12692394852638245
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.4284932017326355
+          },
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.19999100267887115
           },
           {
             "title": "Evaluation Metrics",
             "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
-            "score": 0.1255064159631729
-          },
-          {
-            "title": "RAG Overview",
-            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
-            "score": 0.12520720064640045
+            "score": 0.1419309675693512
           }
         ]
       }
     },
     {
       "step": 2,
-      "action": "summarize",
-      "input": "Retrieve information about RAG and its relation to reducing hallucinations.",
-      "reasoning": "",
-      "result": {
-        "tool": "summarizer",
-        "summary": " RAG, short for Rapid Anatomical Gradient, is a theoretical model proposed by neuroscientist Olaf Blanke. It suggests that the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. In relation to reducing hallucinations, research indicates that RAG could potentially help in understanding and treating various forms of hallucinations by providing insights into the neural mechanisms underlying the perception of reality versus hallucination. However, more specific studies are needed to further explore this relationship."
-      }
-    },
-    {
-      "step": 3,
       "action": "retrieve",
-      "input": "Definition and usage of RAG (Rapid Alert System for Gambling) and its relation to reducing hallucinations in a psychological context",
-      "reasoning": "",
+      "input": [
+        "What is RAG (Retrieval-Augmented Generation)?"
+      ],
+      "reasoning": "To provide a clear understanding of the concept.",
       "result": {
         "tool": "retriever",
-        "query": "Definition and usage of RAG (Rapid Alert System for Gambling) and its relation to reducing hallucinations in a psychological context",
+        "query": "What is RAG (Retrieval-Augmented Generation)?",
         "results": [
           {
-            "title": "MLOps and RAG in Production",
-            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
-            "score": 0.9874259233474731
-          },
-          {
-            "title": "Agent Controllers",
-            "text": "An agent controller orchestrates multiple tools to complete multi-step tasks. Tool selection can be rule-based or LLM-driven. Transparency in decisions is critical for debugging.",
-            "score": 0.9811798334121704
+            "title": "Embedding Models",
+            "text": "Sentence transformers convert text into dense vectors. all-MiniLM-L6-v2 produces 384-dimensional embeddings. Cosine similarity ranks retrieved documents by relevance.",
+            "score": 0.13997004926204681
           },
           {
             "title": "Chunking Strategies",
             "text": "Fixed-size chunking splits documents into equal-length segments with overlap. Smaller chunks give precise retrieval. Larger chunks keep more context. 512 characters with 64 overlap is a strong default.",
-            "score": 0.9811798334121704
+            "score": 0.05888618528842926
+          },
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.05521324276924133
           }
         ]
       }
     },
     {
+      "step": 3,
+      "action": "summarize",
+      "input": "Retrieval-Augmented Generation (RAG) is a technique that combines document retrieval and language model generation to produce grounded answers. It helps reduce hallucinations by using information from external sources during the response generation process, thus providing more accurate and reliable answers compared to traditional language models.",
+      "reasoning": "Summarizing the previously retrieved information about RAG to provide a concise answer on its purpose and how it reduces hallucinations.",
+      "result": {
+        "tool": "summarizer",
+        "summary": " Retrieval-Augmented Generation (RAG) is a method that blends document retrieval and language model generation for creating more grounded responses. By accessing external data during the response generation phase, RAG minimizes hallucinations, thereby offering more precise and dependable answers compared to conventional language models."
+      }
+    },
+    {
       "step": 4,
+      "action": "retrieve",
+      "input": "What is RAG and why does it reduce hallucinations?",
+      "reasoning": "JSON fallback",
+      "result": {
+        "tool": "retriever",
+        "query": "What is RAG and why does it reduce hallucinations?",
+        "results": [
+          {
+            "title": "RAG Overview",
+            "text": "Retrieval-Augmented Generation combines a retriever and a generator. The retriever finds relevant documents from a vector store. The generator uses retrieved context to produce grounded answers. RAG reduces hallucinations because the model references real documents.",
+            "score": 0.4284932017326355
+          },
+          {
+            "title": "MLOps and RAG in Production",
+            "text": "Production RAG needs monitoring of retrieval quality and latency. Hybrid search combines dense and BM25 sparse retrieval. Logging every step is essential for debugging production systems.",
+            "score": 0.19999100267887115
+          },
+          {
+            "title": "Evaluation Metrics",
+            "text": "Precision at K measures relevant results in top-K. Recall at K measures relevant documents retrieved. Hallucination rate counts unsupported statements. End-to-end latency equals retrieval plus generation latency.",
+            "score": 0.1419309675693512
+          }
+        ]
+      }
+    },
+    {
+      "step": 5,
       "action": "answer",
       "input": "What is RAG and why does it reduce hallucinations?",
       "reasoning": "",
-      "result": " In the given information, RAG (Rapid Anatomical Gradient) is a theoretical model proposed by neuroscientist Olaf Blanke that suggests the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. Although the provided information does not explicitly state that RAG reduces hallucinations, it implies that by understanding this model, researchers might find ways to reduce hallucinations, particularly because these areas of the brain are associated with sensory processing and consciousness. However, further research is needed to confirm this relationship and establish a definitive link between RAG and reducing hallucinations.\n\nRapid Alert System for Gambling (RAG) is an entirely different concept in the context of gambling regulation, unrelated to reducing hallucinations in a psychological context."
+      "result": " Retrieval-Augmented Generation (RAG) is a method that combines document retrieval and language model generation to create more grounded responses, reducing hallucinations in the generated answers. By accessing external data during the response generation phase, RAG minimizes the tendency of conventional language models to produce incorrect or false information (hallucinations). This is because RAG references real documents during the generation process to provide a basis for its responses."
     }
   ],
-  "final_answer": " In the given information, RAG (Rapid Anatomical Gradient) is a theoretical model proposed by neuroscientist Olaf Blanke that suggests the brain's functional organization follows an anatomical gradient, with the parietal and temporal lobes playing key roles in the perception of self and the environment. Although the provided information does not explicitly state that RAG reduces hallucinations, it implies that by understanding this model, researchers might find ways to reduce hallucinations, particularly because these areas of the brain are associated with sensory processing and consciousness. However, further research is needed to confirm this relationship and establish a definitive link between RAG and reducing hallucinations.\n\nRapid Alert System for Gambling (RAG) is an entirely different concept in the context of gambling regulation, unrelated to reducing hallucinations in a psychological context.",
+  "final_answer": " Retrieval-Augmented Generation (RAG) is a method that combines document retrieval and language model generation to create more grounded responses, reducing hallucinations in the generated answers. By accessing external data during the response generation phase, RAG minimizes the tendency of conventional language models to produce incorrect or false information (hallucinations). This is because RAG references real documents during the generation process to provide a basis for its responses.",
   "success": true
 }
